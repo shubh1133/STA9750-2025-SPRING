@@ -1,1 +1,6 @@
-/.quarto/
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+data/
+data/nyc_payroll_export.csv
