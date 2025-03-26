@@ -1,14 +1,18 @@
 project:
   type: website
-  output-dir: docs
 
 website:
   title: "STA 9750 Submission Material"
- navbar:
- left:
-   -text: "introduction"
-    file: index.qmd
-   -text: "MP01"
-    file: mp01.qmd
-   -text: "mp02"
-    file: mp02.qmd
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: Mp01.qmd
+        text: Payroll
+      - href: MP02.qmd
+        text: Transit Awards
+
+format:
+  html:
+    theme: cosmo
+    toc: true
