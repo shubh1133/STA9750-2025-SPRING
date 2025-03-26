@@ -77,20 +77,15 @@ This award goes to the agency that has made the biggest leap toward sustainabili
 
 🥇 **Small Agency Winner**: Altoona Metro Transit, dba: AMTRAN – Reduced from 0.3648839 to 0.0015635784 per mile
 
-
 ## ⛽ Biggest Gas Guzzler – The "Oh No, Fix That!" Award💀
 
 "Not all heroes wear capes... and not all transit agencies are heroes."Not every agency can be a green machine. This award "honors" those transit agencies that burn through fuel like it’s going out of style, producing the highest emissions per passenger mile. (Spoiler alert: This is NOT the award you want to win.)
-Chicago Transit Authority	162.6084		
-Medium	West Virginia University, dba: Personal Rapid Transit	645.1318		
-Small	Pennsylvania Department of Transportation	273.8586	 
 
-🥇 **Large Agency Winner**: SChicago Transit Authority	162.6084 kg CO₂ per mile
+🥇 **Large Agency Winner**: SChicago Transit Authority 162.6084 kg CO₂ per mile
 
-🥇 **Medium Agency Winner**: West Virginia University, dba: Personal Rapid Transit	645.1318 kg CO₂ per mile
+🥇 **Medium Agency Winner**: West Virginia University, dba: Personal Rapid Transit 645.1318 kg CO₂ per mile
 
-🥇 **Small Agency Winner**: Pennsylvania Department of Transportation	273.8586 CO₂ per mile
-
+🥇 **Small Agency Winner**: Pennsylvania Department of Transportation 273.8586 CO₂ per mile
 
 While some agencies are already champions of green transit, others have some serious catching up to do. The 2025 Clean Transit Awards highlight the best in eco-friendly transportation while also shining a spotlight on areas that need improvement. 🚆 The takeaway? Cities that invest in sustainable transit are making a real impact on emissions. Meanwhile, gas guzzlers (we’re looking at you, WVU!) still have some work to do. For a full breakdown of the data, check out the Appendix in our official report. Spoiler alert: numbers don’t lie, and neither do emissions reductions!
 
@@ -103,6 +98,7 @@ We started by acquiring data from EIA State Electricity Profiles, which we will 
 #### State Electricity Profiles 🏛️
 
 For purposes of this analysis, we will assume that all electricity generation in a state is fungible. That is, we will assign the average generation emissions to all-electric transit in a state, even if the transit authority officially has a “green supply” agreement in place.
+
 ```{r}
 # Load necessary libraries
 library(ggplot2)
@@ -210,6 +206,7 @@ EIA_SEP_REPORT |>
            State=state) |>
     kable(caption = "EIA State Electricity Profile Report")
 ```
+
 🌍 Here, we have collected the effective emissions per MWh2⚡ as well as price and total state-wide generation capacity. We will use this data to compare the emissions of different transit modalities. We next turn to the National Transit Database to get information on various public transit authorities. Before we do so, however, let’s explore the SEP data a bit first.🔬📉
 
 ## 🔍 Initial Analysis of SEP Data ⚖️
@@ -219,7 +216,6 @@ Let’s answer some burning (fossil-free, we hope!) questions: 🚇
 ### 1. Which state has the most expensive retail electricity? 💰⚡
 
 Which state will make you cry when you get your electricity bill? 😭 Let's find out!
-
 
 ```{r}
 EIA_SEP_REPORT |> 
@@ -233,7 +229,6 @@ EIA_SEP_REPORT |>
 
 Which state’s power plants are puffing out CO₂ like an angry dragon? 🐉🔥 Stay tuned for some shocking revelations!
 
-
 ```{r}
 EIA_SEP_REPORT |> 
   arrange(desc(CO2_MWh)) |> 
@@ -245,7 +240,6 @@ EIA_SEP_REPORT |>
 ### 3. On average, how many pounds of CO2 are emitted per MWh of electricity produced in the US?🏭
 
 Time for some serious math! 📊 We’ll calculate the national average CO₂ emissions per MWh using a **weighted average** because we like our stats accurate.🎯
-
 
 ```{r}
 # Calculate weighted average CO2 emissions
@@ -261,7 +255,6 @@ data.frame(Weighted_Avg_CO2 = weighted_avg_CO2) |>
 ### 4. 🦄 What is the rarest primary energy source in the US? What is the associated cost of electricity and where is it used?🧐
 
 What’s the mythical unicorn of US energy sources? 🦄✨ And where is it hiding? Let’s track it down and see how much it costs! 💸
-
 
 ```{r}
 EIA_SEP_REPORT |> 
@@ -314,6 +307,7 @@ if(!file.exists(NTD_ENERGY_FILE)){
 
 NTD_ENERGY_RAW <- read_xlsx(NTD_ENERGY_FILE)
 ```
+
 ```{r}
 ### Data Cleaning 🧹
 
@@ -669,6 +663,7 @@ AGENCY_NORMALIZED <- AGENCY_NORMALIZED %>%
 ```
 
 ### Find the greenest transit agency by lowest emissions per UPT
+
 ```{r}
 AGENCY_NORMALIZED <- AGENCY_NORMALIZED %>%
   rename(Agency = Agency.x)  # Rename "Agency.x" to "Agency"
@@ -785,6 +780,7 @@ ggplot(greenest_data, aes(x = reorder(Agency, Emissions), y = Emissions, fill = 
 Talk about making a clean getaway! The MTA Bus Company and its smaller counterparts are taking the "green" route. We're not just talking about eco-friendly buses, but real reductions in emissions. A round of applause for the greenest of them all!
 
 #### 🌱 Most Emissions Avoided - The Green Warriors 💨
+
 ```{r}
 # Define the emissions data
 emissions_data <- data.frame(
