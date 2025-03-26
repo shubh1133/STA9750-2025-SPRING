@@ -4,16 +4,11 @@ project:
 
 website:
   title: "STA 9750 Submission Material"
-  description: Course Projects for STA 9750 at Baruch College
-  site-url: "https://shubh1133.github.io/STA9750-2025-SPRING/"
-  navbar:
-    background: primary
-    search: false
-    
-format:
-  html:
-    theme: sandstone
-    toc: false
-
-editor:
-  mode: source
+ navbar:
+ left:
+   -text: "introduction"
+    file: index.qmd
+   -text: "MP01"
+    file: mp01.qmd
+   -text: "mp02"
+    file: mp02.qmd
