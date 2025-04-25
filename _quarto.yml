@@ -12,6 +12,8 @@ website:
         text: Payroll
       - href: mp02.qmd
         text: Transit Awards
+      - href: mp03.qmd
+        text: Midnight Ascension Playlist
 
 format:
   html:
