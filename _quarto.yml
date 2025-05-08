@@ -14,8 +14,10 @@ website:
         text: Transit Awards
       - href: mp03.qmd
         text: Midnight Ascension Playlist
+      - href: mp04.qmd
+        text: 2024 Election County Shift Analysis
+      
 
 format:
   html:
-    theme: cosmo
     toc: true
