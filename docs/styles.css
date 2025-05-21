@@ -1,0 +1,70 @@
+body {
+  background-image: url("images/bg.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #222;
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+main.content {
+  background-color: rgba(255, 255, 255, 0.85); /* slightly more opaque */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+
+
+/* Headings */
+h1, h2, h3 {
+  color: #003366; /* dark navy */
+}
+
+/* Links */
+a {
+  color: #d67f26; /* highlight */
+}
+
+/* Code blocks */
+/* Code blocks */
+pre, code {
+  font-size: 16px;
+  color: #2d2d2d; /* darker text */
+  background-color: #eaeaea !important;
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+/* Fix for comment visibility */
+code span.co {
+  color: #6a737d !important;
+  font-style: italic;
+}
+
+
+
+/* Sidebar adjustments */
+.sidebar nav {
+  background-color: rgba(255, 255, 255, 0.88); /* white with opacity */
+  color: #003366;
+  font-weight: 500;
+}
+
+.sidebar nav a {
+  color: #003366;
+}
+
+.sidebar nav a:hover {
+  color: #d67f26;
+  text-decoration: underline;
+}
+
+/* Table of contents */
+.toc-active {
+  font-weight: bold;
+  color: #d67f26;
+}
