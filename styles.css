@@ -1,0 +1,38 @@
+/* General body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Code block wrapping for preformatted code */
+pre, code {
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  padding: 10px;
+  background-color: #f4f4f4; /* Optional: gives code blocks a grey background */
+  border-radius: 5px; /* Optional: adds rounded corners to code blocks */
+}
+
+/* Specific styling for code blocks in Quarto */
+.quarto code {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Styling for code output area */
+.output-area pre {
+  background-color: #eeeeee;
+  padding: 12px;
+}
+
+/* Styling for visualization outputs (e.g., plots, charts) */
+.quarto-figure {
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+.quarto-figure img {
+  max-width: 100%; /* Makes sure images are responsive */
+}

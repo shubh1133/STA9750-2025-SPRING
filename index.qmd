@@ -1,0 +1,12 @@
+---
+title: "Shubh's Website"
+---
+
+I am Shubh Goyal, a student at Baruch College. My expected graduation date is December 2025, and my field of employment is Data Analyst. I love playing badminton, watching web series, and exploring new places.
+
+My Resume: <file:///C:/Users/goyal/OneDrive/Desktop/Shubh%20Goyal.pdf>
+
+```{r}
+#| include: false
+1+1
+```

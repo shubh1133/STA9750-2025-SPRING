@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shubh Goyal">
+
+<title>🚇📉 Remote Work vs.&nbsp;Ridership: NYC’s Great Subway Shift</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-e57b838a4d9ec1195b98e82353f782f2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/plotly-binding-4.10.4/plotly.js"></script>
+
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">🧭 Explore Sections</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> 📘 Introduction</a></li>
+  <li><a href="#data-acquisition-preparation" id="toc-data-acquisition-preparation" class="nav-link" data-scroll-target="#data-acquisition-preparation"><span class="header-section-number">2</span> 🧰 Data Acquisition &amp; Preparation</a>
+  <ul>
+  <li><a href="#remote-work-data-acs" id="toc-remote-work-data-acs" class="nav-link" data-scroll-target="#remote-work-data-acs"><span class="header-section-number">2.1</span> 🔹 Remote Work Data (ACS)</a></li>
+  <li><a href="#subway-ridership-data-mta" id="toc-subway-ridership-data-mta" class="nav-link" data-scroll-target="#subway-ridership-data-mta"><span class="header-section-number">2.2</span> 🔹 Subway Ridership Data (MTA)</a></li>
+  <li><a href="#station-zip-matching" id="toc-station-zip-matching" class="nav-link" data-scroll-target="#station-zip-matching"><span class="header-section-number">2.3</span> 🔹 Station ZIP Matching</a></li>
+  </ul></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"><span class="header-section-number">3</span> 🔍 Analysis</a>
+  <ul>
+  <li><a href="#motivating-question" id="toc-motivating-question" class="nav-link" data-scroll-target="#motivating-question"><span class="header-section-number">3.1</span> <strong>❓Motivating Question</strong></a></li>
+  <li><a href="#deconstructing-the-commute-key-questions-explored" id="toc-deconstructing-the-commute-key-questions-explored" class="nav-link" data-scroll-target="#deconstructing-the-commute-key-questions-explored"><span class="header-section-number">3.2</span> 📂 Deconstructing the Commute: Key Questions Explored</a></li>
+  <li><a href="#sub-question-1" id="toc-sub-question-1" class="nav-link" data-scroll-target="#sub-question-1"><span class="header-section-number">3.3</span> 📍 Sub-Question 1</a>
+  <ul class="collapse">
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization"><span class="header-section-number">3.3.1</span> 📊 Visualization</a></li>
+  <li><a href="#interpretation-takeaways" id="toc-interpretation-takeaways" class="nav-link" data-scroll-target="#interpretation-takeaways"><span class="header-section-number">3.3.2</span> 📊 Interpretation &amp; Takeaways</a></li>
+  </ul></li>
+  <li><a href="#sub-question-2" id="toc-sub-question-2" class="nav-link" data-scroll-target="#sub-question-2"><span class="header-section-number">3.4</span> 🚇 Sub-Question 2</a>
+  <ul class="collapse">
+  <li><a href="#visualization-1" id="toc-visualization-1" class="nav-link" data-scroll-target="#visualization-1"><span class="header-section-number">3.4.1</span> 📊 Visualization</a></li>
+  <li><a href="#interpretation-takeaways-1" id="toc-interpretation-takeaways-1" class="nav-link" data-scroll-target="#interpretation-takeaways-1"><span class="header-section-number">3.4.2</span> 📊 Interpretation &amp; Takeaways</a></li>
+  </ul></li>
+  <li><a href="#sub-question-3" id="toc-sub-question-3" class="nav-link" data-scroll-target="#sub-question-3"><span class="header-section-number">3.5</span> 📍 Sub-Question 3</a>
+  <ul class="collapse">
+  <li><a href="#visualization-2" id="toc-visualization-2" class="nav-link" data-scroll-target="#visualization-2"><span class="header-section-number">3.5.1</span> 📊 Visualization</a></li>
+  <li><a href="#interpretation-takeaways-2" id="toc-interpretation-takeaways-2" class="nav-link" data-scroll-target="#interpretation-takeaways-2"><span class="header-section-number">3.5.2</span> 📊 Interpretation &amp; Takeaways</a></li>
+  </ul></li>
+  <li><a href="#sub-question-4" id="toc-sub-question-4" class="nav-link" data-scroll-target="#sub-question-4"><span class="header-section-number">3.6</span> 🚇 Sub-Question 4</a>
+  <ul class="collapse">
+  <li><a href="#visualization-3" id="toc-visualization-3" class="nav-link" data-scroll-target="#visualization-3"><span class="header-section-number">3.6.1</span> 📊 Visualization</a></li>
+  <li><a href="#interpretation-takeaways-3" id="toc-interpretation-takeaways-3" class="nav-link" data-scroll-target="#interpretation-takeaways-3"><span class="header-section-number">3.6.2</span> 📊 Interpretation &amp; Takeaways</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">3.7</span> Conclusion ✅</a></li>
+  <li><a href="#connecting-the-dots-from-sub-questions-to-the-bigger-picture" id="toc-connecting-the-dots-from-sub-questions-to-the-bigger-picture" class="nav-link" data-scroll-target="#connecting-the-dots-from-sub-questions-to-the-bigger-picture"><span class="header-section-number">3.8</span> 🚦 Connecting the Dots: From Sub-Questions to the Bigger Picture</a></li>
+  <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings"><span class="header-section-number">3.9</span> 📌 Key Findings</a></li>
+  <li><a href="#future-directions" id="toc-future-directions" class="nav-link" data-scroll-target="#future-directions"><span class="header-section-number">3.10</span> 🔮 Future Directions</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">🚇📉 Remote Work vs.&nbsp;Ridership: NYC’s Great Subway Shift</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i></button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-left">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Shubh Goyal </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> 📘 Introduction</h2>
+<p>The COVID-19 pandemic didn’t just shut down offices — it shifted the very foundation of how New Yorkers live and move through their city. As white-collar workers traded subway platforms for Zoom calls and dining room tables became workstations, one of the world’s busiest transit systems came to a near halt.</p>
+<p>Now, several years later, remote and hybrid work are no longer temporary. They’ve become part of the new urban normal. But what does that mean for the New York City subway system, which relies on daily foot traffic to fund operations, justify service levels, and support the city’s broader economic ecosystem?</p>
+<p>This project explores the intersection of remote work and transit behavior, asking one key question:</p>
+<blockquote class="blockquote">
+<p><strong>How has the rise of remote work since the COVID-19 pandemic impacted New York City subway ridership and transit system dynamics?</strong></p>
+</blockquote>
+<p>To answer this, we combine data from multiple sources:</p>
+<ul>
+<li><p>📊 Subway ridership reports (2020–2023) published by the MTA</p></li>
+<li><p>🏠 ACS ZIP-level estimates of remote work adoption in 2020 and 2023</p></li>
+<li><p>🗺️ Geographic shapefiles and spatial joins to connect subway stations with residential ZIP codes and boroughs</p></li>
+</ul>
+<p>Through data cleaning, integration, and visualization, we track how ridership has (or hasn’t) rebounded — and whether that recovery is tied to remote work trends at the neighborhood and borough levels.</p>
+<p>Ultimately, this analysis not only maps NYC’s mobility shift but also poses deeper questions about equity, infrastructure planning, and the future of commuting in an increasingly remote-capable world.</p>
+</section>
+<section id="data-acquisition-preparation" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data-acquisition-preparation"><span class="header-section-number">2</span> 🧰 Data Acquisition &amp; Preparation</h2>
+<p>This project uses multiple datasets, all processed from scratch to ensure transparency and reproducibility.</p>
+<section id="remote-work-data-acs" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="remote-work-data-acs"><span class="header-section-number">2.1</span> 🔹 Remote Work Data (ACS)</h3>
+<ul>
+<li>Pulled using the <code>tidycensus</code> package with API key.</li>
+<li>Variable used: <code>B08006_017</code> = Workers who primarily worked from home.</li>
+<li>Data retrieved for ZIP Code Tabulation Areas (ZCTAs) from 2020 to 2023.</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Import Required Libraries </span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(tidygeocoder)</span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">library</span>(scales)</span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">library</span>(viridis)</span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="fu">library</span>(tidycensus)</span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="fu">library</span>(broom)</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># Create folders if not exist</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="fu">dir.create</span>(<span class="st">"data"</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="fu">dir.create</span>(<span class="st">"scripts"</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="fu">dir.create</span>(<span class="st">"figures"</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="fu">dir.create</span>(<span class="st">"report"</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-19"><a href="#cb1-19"></a></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="co"># Set your Census API key</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="co"># Sign up at https://api.census.gov/data/key_signup.html and paste below</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="fu">census_api_key</span>(<span class="st">"f28aeb62737e98e4d42504b400f917e145ecdc03"</span>, <span class="at">install =</span> <span class="cn">TRUE</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "f28aeb62737e98e4d42504b400f917e145ecdc03"</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">readRenviron</span>(<span class="st">"~/.Renviron"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co"># Function to pull % working from home by ZCTA</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>get_wfh_by_zip <span class="ot">&lt;-</span> <span class="cf">function</span>(year) {</span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">get_acs</span>(</span>
+<span id="cb3-6"><a href="#cb3-6"></a>    <span class="at">geography =</span> <span class="st">"zip code tabulation area"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7"></a>    <span class="at">variables =</span> <span class="fu">c</span>(<span class="at">wfh =</span> <span class="st">"B08006_017"</span>),  <span class="co"># Worked from home</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>    <span class="at">year =</span> year,</span>
+<span id="cb3-9"><a href="#cb3-9"></a>    <span class="at">survey =</span> <span class="st">"acs5"</span>,                    <span class="co"># Change to 5-year ACS</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>    <span class="at">output =</span> <span class="st">"wide"</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a>    <span class="fu">select</span>(GEOID, wfhE) <span class="sc">|&gt;</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a>    <span class="fu">rename</span>(<span class="at">zip =</span> GEOID, <span class="sc">!!</span><span class="fu">paste0</span>(<span class="st">"wfh_"</span>, year) <span class="sc">:</span><span class="er">=</span> wfhE)</span>
+<span id="cb3-14"><a href="#cb3-14"></a>}</span>
+<span id="cb3-15"><a href="#cb3-15"></a></span>
+<span id="cb3-16"><a href="#cb3-16"></a></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="co"># Get data from 2020 to 2023</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a>wfh_2020 <span class="ot">&lt;-</span> <span class="fu">get_wfh_by_zip</span>(<span class="dv">2020</span>)</span>
+<span id="cb3-19"><a href="#cb3-19"></a>wfh_2021 <span class="ot">&lt;-</span> <span class="fu">get_wfh_by_zip</span>(<span class="dv">2021</span>)</span>
+<span id="cb3-20"><a href="#cb3-20"></a>wfh_2022 <span class="ot">&lt;-</span> <span class="fu">get_wfh_by_zip</span>(<span class="dv">2022</span>)</span>
+<span id="cb3-21"><a href="#cb3-21"></a>wfh_2023 <span class="ot">&lt;-</span> <span class="fu">get_wfh_by_zip</span>(<span class="dv">2023</span>)</span>
+<span id="cb3-22"><a href="#cb3-22"></a></span>
+<span id="cb3-23"><a href="#cb3-23"></a><span class="co"># Merge into one dataframe</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a>wfh_combined <span class="ot">&lt;-</span> <span class="fu">reduce</span>(</span>
+<span id="cb3-25"><a href="#cb3-25"></a>  <span class="fu">list</span>(wfh_2020, wfh_2021, wfh_2022, wfh_2023),</span>
+<span id="cb3-26"><a href="#cb3-26"></a>  full_join,</span>
+<span id="cb3-27"><a href="#cb3-27"></a>  <span class="at">by =</span> <span class="st">"zip"</span></span>
+<span id="cb3-28"><a href="#cb3-28"></a>)</span>
+<span id="cb3-29"><a href="#cb3-29"></a></span>
+<span id="cb3-30"><a href="#cb3-30"></a><span class="co"># Add change column</span></span>
+<span id="cb3-31"><a href="#cb3-31"></a>wfh_combined <span class="ot">&lt;-</span> wfh_combined <span class="sc">|&gt;</span></span>
+<span id="cb3-32"><a href="#cb3-32"></a>  <span class="fu">mutate</span>(<span class="at">wfh_change =</span> wfh_2023 <span class="sc">-</span> wfh_2020)</span>
+<span id="cb3-33"><a href="#cb3-33"></a></span>
+<span id="cb3-34"><a href="#cb3-34"></a><span class="co"># Save as CSV</span></span>
+<span id="cb3-35"><a href="#cb3-35"></a><span class="fu">write_csv</span>(wfh_combined, <span class="st">"data/wfh_combined.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="subway-ridership-data-mta" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="subway-ridership-data-mta"><span class="header-section-number">2.2</span> 🔹 Subway Ridership Data (MTA)</h3>
+<ul>
+<li>Four Excel files from 2020 to 2023 were loaded using <code>readxl</code></li>
+<li>Station names geocoded to ZIPs using <code>tidygeocoder</code> + shapefile join.</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>load_subway_year <span class="ot">&lt;-</span> <span class="cf">function</span>(file_path, year) {</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="fu">read_excel</span>(file_path, <span class="at">skip =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span>  <span class="co"># skip the header row</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>      <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>      <span class="fu">mutate</span>(<span class="at">year =</span> year)</span>
+<span id="cb4-5"><a href="#cb4-5"></a>  }</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>subway_2020 <span class="ot">&lt;-</span> <span class="fu">load_subway_year</span>(<span class="st">"data/subway_ridership_2020.xlsx"</span>, <span class="dv">2020</span>)</span>
+<span id="cb4-8"><a href="#cb4-8"></a>subway_2021 <span class="ot">&lt;-</span> <span class="fu">load_subway_year</span>(<span class="st">"data/subway_ridership_2021.xlsx"</span>, <span class="dv">2021</span>)</span>
+<span id="cb4-9"><a href="#cb4-9"></a>subway_2022 <span class="ot">&lt;-</span> <span class="fu">load_subway_year</span>(<span class="st">"data/subway_ridership_2022.xlsx"</span>, <span class="dv">2022</span>)</span>
+<span id="cb4-10"><a href="#cb4-10"></a>subway_2023 <span class="ot">&lt;-</span> <span class="fu">load_subway_year</span>(<span class="st">"data/subway_ridership_2023.xlsx"</span>, <span class="dv">2023</span>)</span>
+<span id="cb4-11"><a href="#cb4-11"></a></span>
+<span id="cb4-12"><a href="#cb4-12"></a>subway_all <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(subway_2020, subway_2021, subway_2022, subway_2023)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="station-zip-matching" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="station-zip-matching"><span class="header-section-number">2.3</span> 🔹 Station ZIP Matching</h3>
+<ul>
+<li>Subway stations were geocoded using <code>arcgis</code> method.</li>
+<li>Geocoded points were spatially joined to TIGER/Line ZCTA shapefiles.</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>station_coords <span class="ot">&lt;-</span> subway_all <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">distinct</span>(<span class="at">station =</span> station_alphabetical_by_borough) <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(station)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">mutate</span>(<span class="at">full_address =</span> <span class="fu">paste</span>(station, <span class="st">"New York City, NY"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">geocode</span>(</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="at">address =</span> full_address,</span>
+<span id="cb5-7"><a href="#cb5-7"></a>    <span class="at">method =</span> <span class="st">"arcgis"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8"></a>    <span class="at">lat =</span> latitude,</span>
+<span id="cb5-9"><a href="#cb5-9"></a>    <span class="at">long =</span> longitude</span>
+<span id="cb5-10"><a href="#cb5-10"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(latitude) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(longitude))</span>
+<span id="cb5-12"><a href="#cb5-12"></a></span>
+<span id="cb5-13"><a href="#cb5-13"></a>stations_sf <span class="ot">&lt;-</span> station_coords <span class="sc">%&gt;%</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"longitude"</span>, <span class="st">"latitude"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb5-15"><a href="#cb5-15"></a></span>
+<span id="cb5-16"><a href="#cb5-16"></a>zcta_shapes <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/zcta_shapefiles/tl_2020_us_zcta520.shp"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a>  <span class="fu">st_transform</span>(<span class="at">crs =</span> <span class="dv">4326</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `tl_2020_us_zcta520' from data source 
+  `C:\Users\goyal\OneDrive\Documents\STA9750-2025-SPRING\project\data\zcta_shapefiles\tl_2020_us_zcta520.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 33791 features and 9 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -176.6967 ymin: -14.37378 xmax: 145.8305 ymax: 71.34132
+Geodetic CRS:  NAD83</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>stations_with_zip <span class="ot">&lt;-</span> <span class="fu">st_join</span>(stations_sf, zcta_shapes, <span class="at">join =</span> st_within) <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">select</span>(station, <span class="at">zip =</span> ZCTA5CE20) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(zip))</span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="co"># Save as CSV</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="fu">write_csv</span>(stations_with_zip <span class="sc">|&gt;</span> <span class="fu">st_drop_geometry</span>(), <span class="st">"data/station_zip_crosswalk.csv"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7"></a></span>
+<span id="cb7-8"><a href="#cb7-8"></a>subway_all_cleaned <span class="ot">&lt;-</span> subway_all <span class="sc">%&gt;%</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">rename</span>(<span class="at">station =</span> station_alphabetical_by_borough) <span class="sc">%&gt;%</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>  <span class="fu">left_join</span>(stations_with_zip <span class="sc">|&gt;</span> <span class="fu">st_drop_geometry</span>(), <span class="at">by =</span> <span class="st">"station"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(zip)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a>  <span class="fu">mutate</span>(<span class="at">zip =</span> stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="fu">as.character</span>(zip), <span class="dv">5</span>, <span class="at">pad =</span> <span class="st">"0"</span>))</span>
+<span id="cb7-13"><a href="#cb7-13"></a></span>
+<span id="cb7-14"><a href="#cb7-14"></a>nyc_zips <span class="ot">&lt;-</span> subway_all_cleaned <span class="sc">%&gt;%</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a>  <span class="fu">distinct</span>(zip) <span class="sc">%&gt;%</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a>  <span class="fu">pull</span>(zip)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="analysis" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="analysis"><span class="header-section-number">3</span> 🔍 Analysis</h2>
+<section id="motivating-question" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="motivating-question"><span class="header-section-number">3.1</span> <strong>❓Motivating Question</strong></h3>
+<blockquote class="blockquote">
+<p><strong>🚇💻 How has the rise of remote work since the COVID-19 pandemic impacted New York City subway ridership and transit system dynamics?</strong></p>
+</blockquote>
+<p>Rather than assuming a city-wide story, this analysis asks: Where, exactly, did ridership recover, and where did it not? Did neighborhoods with surging remote work see sustained transit losses? Could borough-level commuting trends reveal structural shifts in how different communities depend on the subway?</p>
+<p>The pandemic forced a once-daily ritual of commuting to become optional for many. But not all ZIP codes, jobs, or boroughs adapted equally. Some workers returned to the office quickly. Others never left. Meanwhile, essential workers continued riding the subway every day, even in the city’s darkest moments.</p>
+<p>By pairing quantitative remote work data with subway ridership trends, we attempt to untangle how the rise of WFH reshaped urban movement. Instead of looking at raw totals, we explore localized transit recovery, uncovering hidden disparities across neighborhoods and boroughs. Our goal is not only to measure change, but to map how the very purpose of public transit has evolved post-pandemic.</p>
+</section>
+<section id="deconstructing-the-commute-key-questions-explored" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="deconstructing-the-commute-key-questions-explored"><span class="header-section-number">3.2</span> 📂 Deconstructing the Commute: Key Questions Explored</h3>
+<p>To explore the motivating question, we break it down into four sub-questions, each addressing a different aspect of the transit–WFH relationship.</p>
+</section>
+<section id="sub-question-1" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored"><span class="header-section-number">3.3</span> 📍 Sub-Question 1</h3>
+<p><strong>Which ZIP codes had the largest increase in remote work between 2020 and 2023?</strong></p>
+<p>We begin by identifying NYC ZIP codes where remote work adoption increased the most. Using ACS 5-year estimates, we calculate changes in the number of workers reporting WFH status and spotlight the neighborhoods driving this shift.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-6"><a href="#cb8-6"></a></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="co"># Ensure ZIPs are 5-digit character strings</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>wfh_nyc <span class="ot">&lt;-</span> wfh_combined <span class="sc">%&gt;%</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>  <span class="fu">mutate</span>(<span class="at">zip =</span> stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="fu">as.character</span>(zip), <span class="dv">5</span>, <span class="at">pad =</span> <span class="st">"0"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>  <span class="fu">filter</span>(zip <span class="sc">%in%</span> nyc_zips)</span>
+<span id="cb8-11"><a href="#cb8-11"></a></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="co"># Get top 10 ZIPs by WFH growth</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>top_10_wfh <span class="ot">&lt;-</span> wfh_nyc <span class="sc">%&gt;%</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(wfh_change)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(wfh_change)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb8-17"><a href="#cb8-17"></a></span>
+<span id="cb8-18"><a href="#cb8-18"></a><span class="co"># Define MTA blue for reuse</span></span>
+<span id="cb8-19"><a href="#cb8-19"></a>mta_blue <span class="ot">&lt;-</span> <span class="st">"#003366"</span></span>
+<span id="cb8-20"><a href="#cb8-20"></a></span>
+<span id="cb8-21"><a href="#cb8-21"></a><span class="co"># Render Kable</span></span>
+<span id="cb8-22"><a href="#cb8-22"></a>top_10_wfh <span class="sc">%&gt;%</span></span>
+<span id="cb8-23"><a href="#cb8-23"></a>  <span class="fu">select</span>(zip, wfh_2020,wfh_2021, wfh_2022, wfh_2023, wfh_change) <span class="sc">%&gt;%</span></span>
+<span id="cb8-24"><a href="#cb8-24"></a>  <span class="fu">kable</span>(</span>
+<span id="cb8-25"><a href="#cb8-25"></a>    <span class="at">format =</span> <span class="st">"html"</span>,</span>
+<span id="cb8-26"><a href="#cb8-26"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"ZIP Code"</span>, <span class="st">"WFH in 2020"</span>, <span class="st">"WFH in 2021"</span>, <span class="st">"WFH in 2022"</span>, <span class="st">"WFH in     2023"</span>, <span class="st">"Change"</span>),</span>
+<span id="cb8-27"><a href="#cb8-27"></a>    <span class="at">align =</span> <span class="st">"c"</span>,</span>
+<span id="cb8-28"><a href="#cb8-28"></a>    <span class="at">digits =</span> <span class="dv">0</span>,</span>
+<span id="cb8-29"><a href="#cb8-29"></a>    <span class="at">caption =</span> <span class="st">"Estimated Remote Work Growth by ZIP Code (Top 10 NYC ZIPs)"</span></span>
+<span id="cb8-30"><a href="#cb8-30"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb8-31"><a href="#cb8-31"></a>  <span class="fu">kable_styling</span>(</span>
+<span id="cb8-32"><a href="#cb8-32"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>),</span>
+<span id="cb8-33"><a href="#cb8-33"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb8-34"><a href="#cb8-34"></a>    <span class="at">position =</span> <span class="st">"center"</span></span>
+<span id="cb8-35"><a href="#cb8-35"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb8-36"><a href="#cb8-36"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">background =</span> mta_blue, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-37"><a href="#cb8-37"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">background =</span> <span class="st">"#f8f8f8"</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Estimated Remote Work Growth by ZIP Code (Top 10 NYC ZIPs)</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(0, 51, 102, 255) !important;">ZIP Code</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(0, 51, 102, 255) !important;">WFH in 2020</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(0, 51, 102, 255) !important;">WFH in 2021</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(0, 51, 102, 255) !important;">WFH in 2022</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(0, 51, 102, 255) !important;">WFH in 2023</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(0, 51, 102, 255) !important;">Change</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">11215</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">5821</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">9704</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">11969</td>
+<td style="text-align: center;">13626</td>
+<td style="text-align: center;">7805</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">11201</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">5403</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">8919</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">11321</td>
+<td style="text-align: center;">13165</td>
+<td style="text-align: center;">7762</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">10023</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">5330</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">7637</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">10271</td>
+<td style="text-align: center;">11520</td>
+<td style="text-align: center;">6190</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">11238</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">4411</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">7201</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">8903</td>
+<td style="text-align: center;">10456</td>
+<td style="text-align: center;">6045</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">10016</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">4007</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">6845</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">8040</td>
+<td style="text-align: center;">9956</td>
+<td style="text-align: center;">5949</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">11221</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">2970</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">4994</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">7210</td>
+<td style="text-align: center;">8917</td>
+<td style="text-align: center;">5947</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">11216</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">3624</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">6346</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">7323</td>
+<td style="text-align: center;">8855</td>
+<td style="text-align: center;">5231</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">11222</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">2495</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">4724</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">5999</td>
+<td style="text-align: center;">7228</td>
+<td style="text-align: center;">4733</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">11217</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">3448</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">5361</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">7022</td>
+<td style="text-align: center;">8130</td>
+<td style="text-align: center;">4682</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">10128</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">3869</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">5891</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(248, 248, 248, 255) !important;">7431</td>
+<td style="text-align: center;">8300</td>
+<td style="text-align: center;">4431</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<section id="visualization" class="level4" data-number="3.3.1">
+<h4 data-number="3.3.1" class="anchored"><span class="header-section-number">3.3.1</span> 📊 Visualization</h4>
+<h2 style="font-size: 24px; color: #2c3e50; font-weight: bold;" class="anchored" data-anchor-id="visualization">
+<p>📊 ZIP Codes Ranked by Remote Work Growth (2020–2023)</p>
+</h2>
+<img src="images/animated_wfh_growth_vertical.gif" alt="Animated WFH Growth Chart" style="width:100%; border-radius:12px;">
+</section>
+<section id="interpretation-takeaways" class="level4" data-number="3.3.2">
+<h4 data-number="3.3.2" class="anchored" data-anchor-id="interpretation-takeaways"><span class="header-section-number">3.3.2</span> 📊 Interpretation &amp; Takeaways</h4>
+<p>The plot above highlights the ZIP codes with the highest increase in remote work between 2020 and 2023. Unsurprisingly, most of these ZIPs are located in Manhattan and affluent parts of Brooklyn, which tend to have higher concentrations of office workers in remote-compatible industries (e.g., finance, tech, media).</p>
+<p>For example, ZIP codes 11215 (Park Slope) and 11201 (Downtown Brooklyn) show among the highest spikes in WFH adoption, likely due to their professional demographic and proximity to tech and business districts. Manhattan neighborhoods like 10023 (Upper West Side) and 10016 (Murray Hill) also experienced substantial increases.</p>
+<p>This spike in remote work raises a key hypothesis: ZIP codes with high WFH growth may have seen slower subway recovery, a trend we’ll explore in the next sub-question.</p>
+</section>
+</section>
+<section id="sub-question-2" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="sub-question-2"><span class="header-section-number">3.4</span> 🚇 Sub-Question 2</h3>
+<p><strong>How did subway ridership recover in ZIP codes with the highest remote work adoption?</strong></p>
+<p>Next, we focus on the transit recovery patterns in those high-WFH ZIPs. By tracking annual ridership totals from 2020 to 2023, we assess whether increased remote work delayed or dampened the rebound in subway usage.</p>
+<section id="visualization-1" class="level4" data-number="3.4.1">
+<h4 data-number="3.4.1" class="anchored" data-anchor-id="visualization-1"><span class="header-section-number">3.4.1</span> 📊 Visualization</h4>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># STEP 1: Reshape subway data into long format</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>subway_long <span class="ot">&lt;-</span> subway_all_cleaned <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">select</span>(station, zip, x2020, x2021, x2022, x2023) <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb9-5"><a href="#cb9-5"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"x20"</span>),</span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7"></a>    <span class="at">names_prefix =</span> <span class="st">"x"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8"></a>    <span class="at">values_to =</span> <span class="st">"annual_ridership"</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-11"><a href="#cb9-11"></a>    <span class="at">year =</span> <span class="fu">as.integer</span>(year),</span>
+<span id="cb9-12"><a href="#cb9-12"></a>    <span class="at">zip =</span> stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="fu">as.character</span>(zip), <span class="dv">5</span>, <span class="at">pad =</span> <span class="st">"0"</span>)</span>
+<span id="cb9-13"><a href="#cb9-13"></a>  )</span>
+<span id="cb9-14"><a href="#cb9-14"></a></span>
+<span id="cb9-15"><a href="#cb9-15"></a><span class="co"># STEP 2: Load or use high-WFH ZIPs from your analysis</span></span>
+<span id="cb9-16"><a href="#cb9-16"></a><span class="co"># (These ZIPs had the largest increase in remote work from 2020 to 2023)</span></span>
+<span id="cb9-17"><a href="#cb9-17"></a>high_wfh_zips <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"11215"</span>, <span class="st">"11201"</span>, <span class="st">"10023"</span>, <span class="st">"11238"</span>, <span class="st">"10016"</span>, </span>
+<span id="cb9-18"><a href="#cb9-18"></a>                   <span class="st">"11221"</span>, <span class="st">"11216"</span>, <span class="st">"11222"</span>, <span class="st">"11217"</span>, <span class="st">"10128"</span>)</span>
+<span id="cb9-19"><a href="#cb9-19"></a></span>
+<span id="cb9-20"><a href="#cb9-20"></a><span class="co"># STEP 3: Summarize annual ridership for high-WFH ZIPs</span></span>
+<span id="cb9-21"><a href="#cb9-21"></a>zip_year_ridership <span class="ot">&lt;-</span> subway_long <span class="sc">%&gt;%</span></span>
+<span id="cb9-22"><a href="#cb9-22"></a>  <span class="fu">filter</span>(zip <span class="sc">%in%</span> high_wfh_zips) <span class="sc">%&gt;%</span></span>
+<span id="cb9-23"><a href="#cb9-23"></a>  <span class="fu">group_by</span>(zip, year) <span class="sc">%&gt;%</span></span>
+<span id="cb9-24"><a href="#cb9-24"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb9-25"><a href="#cb9-25"></a>    <span class="at">total_ridership =</span> <span class="fu">sum</span>(annual_ridership, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb9-26"><a href="#cb9-26"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb9-27"><a href="#cb9-27"></a>  )</span>
+<span id="cb9-28"><a href="#cb9-28"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb9-29"><a href="#cb9-29"></a><span class="co"># STEP 4: Plot heatmap with consistent style</span></span>
+<span id="cb9-30"><a href="#cb9-30"></a>heatmap_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(zip_year_ridership, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(year), <span class="at">y =</span> <span class="fu">fct_reorder</span>(zip, <span class="sc">-</span>total_ridership), <span class="at">fill =</span> total_ridership)) <span class="sc">+</span></span>
+<span id="cb9-31"><a href="#cb9-31"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb9-32"><a href="#cb9-32"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"plasma"</span>, <span class="at">name =</span> <span class="st">"Ridership"</span>, <span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span></span>
+<span id="cb9-33"><a href="#cb9-33"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-34"><a href="#cb9-34"></a>    <span class="at">title =</span> <span class="st">"🗺 Subway Ridership Heatmap (2020–2023)"</span>,</span>
+<span id="cb9-35"><a href="#cb9-35"></a>    <span class="at">subtitle =</span> <span class="st">"Hover to view ZIP-wise ridership trends"</span>,</span>
+<span id="cb9-36"><a href="#cb9-36"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb9-37"><a href="#cb9-37"></a>    <span class="at">y =</span> <span class="st">"ZIP Code"</span></span>
+<span id="cb9-38"><a href="#cb9-38"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-39"><a href="#cb9-39"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span>
+<span id="cb9-40"><a href="#cb9-40"></a></span>
+<span id="cb9-41"><a href="#cb9-41"></a><span class="co"># Make interactive</span></span>
+<span id="cb9-42"><a href="#cb9-42"></a><span class="fu">ggplotly</span>(heatmap_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-b6c84bf5024b4e89eff0" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-b6c84bf5024b4e89eff0">{"x":{"data":[{"x":[1,2,3,4],"y":[1,2,3,4,5,6,7,8,9,10],"z":[[1,0.85731587302922674,0.79849483296566204,0.45274795584772165],[0.39699422863959027,0.41847976998322084,0.37006493858124084,0.21019448169636121],[0.42292547342740699,0.37562828285239891,0.3380819017529258,0.18903641168874416],[0.3765600929411132,0.31200634259876892,0.31382246447243456,0.17432304116620584],[0.29814497802446938,0.25195670899756639,0.23132929936720537,0.12675386308011508],[0.25317142193797904,0.21069709147568058,0.16686621951928785,0.087470727189125574],[0.22265878898332925,0.18940834693470365,0.17320261539524093,0.09744177167547384],[0.20312848538706865,0.18840113420943713,0.15679620043031381,0.081359553930767867],[0.051149024863204176,0.041159152473934341,0.045077196582058658,0.021609720106301824],[0.023428145395470758,0.016619308924521004,0.010432159781408856,0]],"text":[["factor(year): 2020<br />fct_reorder(zip, -total_ridership): 10023<br />total_ridership: 291189.437","factor(year): 2021<br />fct_reorder(zip, -total_ridership): 10023<br />total_ridership: 250120.174","factor(year): 2022<br />fct_reorder(zip, -total_ridership): 10023<br />total_ridership: 233189.512","factor(year): 2023<br />fct_reorder(zip, -total_ridership): 10023<br />total_ridership: 133672.000"],["factor(year): 2020<br />fct_reorder(zip, -total_ridership): 10128<br />total_ridership: 117624.213","factor(year): 2021<br />fct_reorder(zip, -total_ridership): 10128<br />total_ridership: 123808.470","factor(year): 2022<br />fct_reorder(zip, -total_ridership): 10128<br />total_ridership: 109873.063","factor(year): 2023<br />fct_reorder(zip, -total_ridership): 10128<br />total_ridership:  63857.000"],["factor(year): 2020<br />fct_reorder(zip, -total_ridership): 11217<br />total_ridership: 125088.092","factor(year): 2021<br />fct_reorder(zip, -total_ridership): 11217<br />total_ridership: 111474.380","factor(year): 2022<br />fct_reorder(zip, -total_ridership): 11217<br />total_ridership: 100667.276","factor(year): 2023<br />fct_reorder(zip, -total_ridership): 11217<br />total_ridership:  57767.000"],["factor(year): 2020<br />fct_reorder(zip, -total_ridership): 11238<br />total_ridership: 111742.586","factor(year): 2021<br />fct_reorder(zip, -total_ridership): 11238<br />total_ridership:  93161.858","factor(year): 2022<br />fct_reorder(zip, -total_ridership): 11238<br />total_ridership:  93684.598","factor(year): 2023<br />fct_reorder(zip, -total_ridership): 11238<br />total_ridership:  53532.000"],["factor(year): 2020<br />fct_reorder(zip, -total_ridership): 11215<br />total_ridership:  89172.094","factor(year): 2021<br />fct_reorder(zip, -total_ridership): 11215<br />total_ridership:  75877.565","factor(year): 2022<br />fct_reorder(zip, -total_ridership): 11215<br />total_ridership:  69940.307","factor(year): 2023<br />fct_reorder(zip, -total_ridership): 11215<br />total_ridership:  39840.000"],["factor(year): 2020<br />fct_reorder(zip, -total_ridership): 11216<br />total_ridership:  76227.200","factor(year): 2021<br />fct_reorder(zip, -total_ridership): 11216<br />total_ridership:  64001.668","factor(year): 2022<br />fct_reorder(zip, -total_ridership): 11216<br />total_ridership:  51385.677","factor(year): 2023<br />fct_reorder(zip, -total_ridership): 11216<br />total_ridership:  28533.000"],["factor(year): 2020<br />fct_reorder(zip, -total_ridership): 11201<br />total_ridership:  67444.644","factor(year): 2021<br />fct_reorder(zip, -total_ridership): 11201<br />total_ridership:  57874.055","factor(year): 2022<br />fct_reorder(zip, -total_ridership): 11201<br />total_ridership:  53209.504","factor(year): 2023<br />fct_reorder(zip, -total_ridership): 11201<br />total_ridership:  31403.000"],["factor(year): 2020<br />fct_reorder(zip, -total_ridership): 11222<br />total_ridership:  61823.170","factor(year): 2021<br />fct_reorder(zip, -total_ridership): 11222<br />total_ridership:  57584.146","factor(year): 2022<br />fct_reorder(zip, -total_ridership): 11222<br />total_ridership:  48487.189","factor(year): 2023<br />fct_reorder(zip, -total_ridership): 11222<br />total_ridership:  26774.000"],["factor(year): 2020<br />fct_reorder(zip, -total_ridership): 10016<br />total_ridership:  18078.400","factor(year): 2021<br />fct_reorder(zip, -total_ridership): 10016<br />total_ridership:  15202.980","factor(year): 2022<br />fct_reorder(zip, -total_ridership): 10016<br />total_ridership:  16330.724","factor(year): 2023<br />fct_reorder(zip, -total_ridership): 10016<br />total_ridership:   9576.000"],["factor(year): 2020<br />fct_reorder(zip, -total_ridership): 11221<br />total_ridership:  10099.404","factor(year): 2021<br />fct_reorder(zip, -total_ridership): 11221<br />total_ridership:   8139.593","factor(year): 2022<br />fct_reorder(zip, -total_ridership): 11221<br />total_ridership:   6358.724","factor(year): 2023<br />fct_reorder(zip, -total_ridership): 11221<br />total_ridership:   3356.000"]],"colorscale":[[0,"#0D0887"],[0.010432159781408856,"#170889"],[0.016619308924521004,"#1C088A"],[0.021609720106301824,"#1F078B"],[0.023428145395470758,"#20078B"],[0.041159152473934341,"#2A078E"],[0.045077196582058658,"#2C078E"],[0.051149024863204176,"#2F078F"],[0.081359553930767867,"#3D0594"],[0.087470727189125574,"#400595"],[0.09744177167547384,"#440597"],[0.12675386308011508,"#4F049C"],[0.15679620043031381,"#5B02A1"],[0.16686621951928785,"#5E02A2"],[0.17320261539524093,"#6001A4"],[0.17432304116620584,"#6101A4"],[0.18840113420943713,"#6601A6"],[0.18903641168874416,"#6601A6"],[0.18940834693470365,"#6601A6"],[0.20312848538706865,"#6B01A8"],[0.21019448169636121,"#6E02A7"],[0.21069709147568058,"#6F02A7"],[0.22265878898332925,"#7404A5"],[0.23132929936720537,"#7706A4"],[0.25195670899756639,"#7F0BA2"],[0.25317142193797904,"#800CA2"],[0.29814497802446938,"#90169C"],[0.31200634259876892,"#95199B"],[0.31382246447243456,"#96199B"],[0.3380819017529258,"#9E1E98"],[0.37006493858124084,"#A82494"],[0.37562828285239891,"#AA2593"],[0.3765600929411132,"#AA2693"],[0.39699422863959027,"#B02990"],[0.41847976998322084,"#B6308C"],[0.42292547342740699,"#B7328B"],[0.45274795584772165,"#BF3B85"],[0.79849483296566204,"#FCA637"],[0.85731587302922674,"#FABF32"],[1,"#F0F921"]],"type":"heatmap","showscale":false,"autocolorscale":false,"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1],"y":[1],"name":"f6cd7cdd22e8dbdc67ee04c00d16e095","type":"scatter","mode":"markers","opacity":0,"hoverinfo":"skip","showlegend":false,"marker":{"color":[0,1],"colorscale":[[0,"#0D0887"],[0.0033444816053511701,"#110888"],[0.0066889632107023402,"#140888"],[0.010033444816053514,"#170889"],[0.013377926421404682,"#190889"],[0.016722408026755852,"#1C088A"],[0.020066889632107027,"#1E078A"],[0.023411371237458196,"#20078B"],[0.026755852842809364,"#22078B"],[0.030100334448160536,"#24078C"],[0.033444816053511704,"#26078C"],[0.036789297658862873,"#28078D"],[0.040133779264214055,"#2A078E"],[0.043478260869565223,"#2C078E"],[0.046822742474916391,"#2D078F"],[0.05016722408026756,"#2F078F"],[0.053511705685618728,"#310690"],[0.056856187290969903,"#320690"],[0.060200668896321072,"#340691"],[0.06354515050167224,"#350691"],[0.066889632107023408,"#370692"],[0.070234113712374577,"#380692"],[0.073578595317725745,"#3A0693"],[0.076923076923076913,"#3B0694"],[0.08026755852842811,"#3D0694"],[0.083612040133779278,"#3E0595"],[0.086956521739130446,"#3F0595"],[0.090301003344481615,"#410596"],[0.093645484949832783,"#420596"],[0.096989966555183951,"#440597"],[0.10033444816053512,"#450597"],[0.10367892976588629,"#460598"],[0.10702341137123746,"#480499"],[0.11036789297658864,"#490499"],[0.11371237458193981,"#4A049A"],[0.11705685618729098,"#4C049A"],[0.12040133779264214,"#4D049B"],[0.12374581939799331,"#4E049B"],[0.12709030100334448,"#4F049C"],[0.13043478260869565,"#51039C"],[0.13377926421404682,"#52039D"],[0.13712374581939799,"#53039E"],[0.14046822742474915,"#54039E"],[0.14381270903010032,"#56039F"],[0.14715719063545149,"#57039F"],[0.15050167224080266,"#5803A0"],[0.15384615384615383,"#5902A0"],[0.15719063545150502,"#5B02A1"],[0.16053511705685622,"#5C02A1"],[0.16387959866220739,"#5D02A2"],[0.16722408026755856,"#5E02A3"],[0.17056856187290972,"#6002A3"],[0.17391304347826089,"#6101A4"],[0.17725752508361206,"#6201A4"],[0.18060200668896323,"#6301A5"],[0.1839464882943144,"#6401A5"],[0.18729096989966557,"#6601A6"],[0.19063545150501673,"#6701A6"],[0.1939799331103679,"#6800A7"],[0.19732441471571907,"#6900A8"],[0.20066889632107024,"#6A00A8"],[0.20401337792642141,"#6C01A8"],[0.20735785953177258,"#6D01A7"],[0.21070234113712374,"#6F02A7"],[0.21404682274247491,"#7003A6"],[0.21739130434782608,"#7203A6"],[0.22073578595317728,"#7304A6"],[0.22408026755852845,"#7405A5"],[0.22742474916387961,"#7605A5"],[0.23076923076923078,"#7706A4"],[0.23411371237458195,"#7807A4"],[0.23745819397993312,"#7A08A4"],[0.24080267558528429,"#7B08A3"],[0.24414715719063546,"#7C09A3"],[0.24749163879598662,"#7E0AA2"],[0.25083612040133779,"#7F0BA2"],[0.25418060200668896,"#800CA2"],[0.25752508361204013,"#810DA1"],[0.2608695652173913,"#830DA1"],[0.26421404682274247,"#840EA0"],[0.26755852842809363,"#850FA0"],[0.2709030100334448,"#8610A0"],[0.27424749163879597,"#88119F"],[0.27759197324414714,"#89119F"],[0.28093645484949831,"#8A129E"],[0.28428093645484948,"#8B139E"],[0.28762541806020064,"#8C149E"],[0.29096989966555181,"#8E149D"],[0.29431438127090298,"#8F159D"],[0.29765886287625415,"#90169C"],[0.30100334448160532,"#91169C"],[0.30434782608695649,"#92179C"],[0.30769230769230765,"#93189B"],[0.31103678929765888,"#95199B"],[0.31438127090301005,"#96199A"],[0.31772575250836121,"#971A9A"],[0.32107023411371244,"#981B9A"],[0.32441471571906361,"#991B99"],[0.32775919732441477,"#9A1C99"],[0.33110367892976594,"#9B1D98"],[0.33444816053511711,"#9C1D98"],[0.33779264214046828,"#9D1E98"],[0.34113712374581945,"#9F1F97"],[0.34448160535117062,"#A01F97"],[0.34782608695652178,"#A12096"],[0.35117056856187295,"#A22196"],[0.35451505016722412,"#A32196"],[0.35785953177257529,"#A42295"],[0.36120401337792646,"#A52395"],[0.36454849498327763,"#A62394"],[0.3678929765886288,"#A72494"],[0.37123745819397996,"#A82494"],[0.37458193979933113,"#A92593"],[0.3779264214046823,"#AA2693"],[0.38127090301003347,"#AB2692"],[0.38461538461538464,"#AC2792"],[0.38795986622073581,"#AD2891"],[0.39130434782608697,"#AE2891"],[0.39464882943143814,"#AF2991"],[0.39799331103678931,"#B02A90"],[0.40133779264214048,"#B12A90"],[0.40468227424749165,"#B22C8F"],[0.40802675585284282,"#B32D8E"],[0.41137123745819398,"#B42E8E"],[0.41471571906354515,"#B52F8D"],[0.41806020066889632,"#B6308C"],[0.42140468227424749,"#B7318B"],[0.42474916387959866,"#B8328B"],[0.42809364548494983,"#B9338A"],[0.43143812709030099,"#B93489"],[0.43478260869565216,"#BA3588"],[0.43812709030100333,"#BB3688"],[0.44147157190635455,"#BC3887"],[0.44481605351170572,"#BD3986"],[0.44816053511705689,"#BE3A86"],[0.45150501672240806,"#BF3B85"],[0.45484949832775923,"#BF3C84"],[0.4581939799331104,"#C03D83"],[0.46153846153846156,"#C13E83"],[0.46488294314381273,"#C23F82"],[0.4682274247491639,"#C34081"],[0.47157190635451507,"#C44180"],[0.47491638795986624,"#C44280"],[0.47826086956521741,"#C5437F"],[0.48160535117056857,"#C6437E"],[0.48494983277591974,"#C7447D"],[0.48829431438127091,"#C8457D"],[0.49163879598662208,"#C9467C"],[0.49498327759197325,"#C9477B"],[0.49832775919732442,"#CA487A"],[0.50167224080267558,"#CB497A"],[0.50501672240802675,"#CC4A79"],[0.50836120401337792,"#CD4B78"],[0.51170568561872909,"#CD4C77"],[0.51505016722408026,"#CE4D77"],[0.51839464882943143,"#CF4E76"],[0.52173913043478259,"#D04F75"],[0.52508361204013376,"#D05074"],[0.52842809364548493,"#D15173"],[0.5317725752508361,"#D25273"],[0.53511705685618727,"#D35372"],[0.53846153846153844,"#D35371"],[0.5418060200668896,"#D45470"],[0.54515050167224077,"#D5556F"],[0.54849498327759194,"#D6566F"],[0.55183946488294311,"#D6576E"],[0.55518394648829428,"#D7586D"],[0.55852842809364545,"#D8596C"],[0.56187290969899661,"#D95A6B"],[0.56521739130434778,"#D95B6B"],[0.56856187290969895,"#DA5C6A"],[0.57190635451505012,"#DB5C69"],[0.57525083612040129,"#DC5D68"],[0.57859531772575246,"#DC5E67"],[0.58193979933110362,"#DD5F67"],[0.58528428093645479,"#DE6066"],[0.58862876254180596,"#DF6165"],[0.59197324414715713,"#DF6264"],[0.5953177257525083,"#E06363"],[0.59866220735785947,"#E16462"],[0.60200668896321063,"#E16562"],[0.6053511705685618,"#E26661"],[0.60869565217391297,"#E26761"],[0.61204013377926414,"#E36860"],[0.61538461538461531,"#E3695F"],[0.61872909698996648,"#E46B5F"],[0.62207357859531776,"#E46C5E"],[0.62541806020066892,"#E56D5E"],[0.62876254180602009,"#E56E5D"],[0.63210702341137126,"#E66F5D"],[0.63545150501672243,"#E6705C"],[0.6387959866220736,"#E7715C"],[0.64214046822742488,"#E7735B"],[0.64548494983277604,"#E8745A"],[0.64882943143812721,"#E8755A"],[0.65217391304347838,"#E97659"],[0.65551839464882955,"#E97759"],[0.65886287625418072,"#EA7858"],[0.66220735785953189,"#EA7957"],[0.66555183946488305,"#EB7A57"],[0.66889632107023422,"#EB7C56"],[0.67224080267558539,"#EB7D55"],[0.67558528428093656,"#EC7E55"],[0.67892976588628773,"#EC7F54"],[0.6822742474916389,"#ED8053"],[0.68561872909699006,"#ED8153"],[0.68896321070234123,"#EE8252"],[0.6923076923076924,"#EE8351"],[0.69565217391304357,"#EF8451"],[0.69899665551839474,"#EF8650"],[0.70234113712374591,"#F0874F"],[0.70568561872909707,"#F0884F"],[0.70903010033444824,"#F0894E"],[0.71237458193979941,"#F18A4D"],[0.71571906354515058,"#F18B4D"],[0.71906354515050175,"#F28C4C"],[0.72240802675585292,"#F28D4B"],[0.72575250836120409,"#F38E4A"],[0.72909698996655525,"#F38F4A"],[0.73244147157190642,"#F49049"],[0.73578595317725759,"#F49148"],[0.73913043478260876,"#F49347"],[0.74247491638795993,"#F59446"],[0.7458193979933111,"#F59546"],[0.74916387959866226,"#F69645"],[0.75250836120401343,"#F69744"],[0.7558528428093646,"#F79843"],[0.75919732441471577,"#F79942"],[0.76254180602006694,"#F79A41"],[0.76588628762541811,"#F89B40"],[0.76923076923076927,"#F89C3F"],[0.77257525083612044,"#F99D3E"],[0.77591973244147161,"#F99E3D"],[0.77926421404682278,"#F99F3D"],[0.78260869565217395,"#FAA03C"],[0.78595317725752512,"#FAA23B"],[0.78929765886287628,"#FBA339"],[0.79264214046822745,"#FBA438"],[0.79598662207357862,"#FCA537"],[0.79933110367892979,"#FCA636"],[0.80267558528428096,"#FCA736"],[0.80602006688963213,"#FCA936"],[0.80936454849498329,"#FCAA35"],[0.81270903010033446,"#FCAC35"],[0.81605351170568563,"#FCAD35"],[0.8193979933110368,"#FCAE35"],[0.82274247491638797,"#FBB035"],[0.82608695652173914,"#FBB135"],[0.8294314381270903,"#FBB334"],[0.83277591973244147,"#FBB434"],[0.83612040133779264,"#FBB634"],[0.83946488294314381,"#FBB734"],[0.84280936454849498,"#FBB833"],[0.84615384615384615,"#FBBA33"],[0.84949832775919731,"#FBBB33"],[0.85284280936454848,"#FBBD33"],[0.85618729096989965,"#FABE32"],[0.85953177257525082,"#FABF32"],[0.86287625418060199,"#FAC132"],[0.86622073578595316,"#FAC232"],[0.86956521739130432,"#FAC431"],[0.87290969899665549,"#FAC531"],[0.87625418060200666,"#FAC631"],[0.87959866220735783,"#F9C831"],[0.88294314381270911,"#F9C930"],[0.88628762541806028,"#F9CB30"],[0.88963210702341144,"#F9CC30"],[0.89297658862876261,"#F9CD2F"],[0.89632107023411378,"#F8CF2F"],[0.89966555183946495,"#F8D02F"],[0.90301003344481612,"#F8D22E"],[0.90635451505016729,"#F8D32E"],[0.90969899665551845,"#F8D42E"],[0.91304347826086962,"#F7D62D"],[0.91638795986622079,"#F7D72D"],[0.91973244147157196,"#F7D82D"],[0.92307692307692313,"#F7DA2C"],[0.9264214046822743,"#F7DB2C"],[0.92976588628762546,"#F6DD2C"],[0.93311036789297663,"#F6DE2B"],[0.9364548494983278,"#F6DF2B"],[0.93979933110367897,"#F6E12A"],[0.94314381270903014,"#F5E22A"],[0.94648829431438131,"#F5E32A"],[0.94983277591973247,"#F5E529"],[0.95317725752508364,"#F4E629"],[0.95652173913043481,"#F4E728"],[0.95986622073578598,"#F4E928"],[0.96321070234113715,"#F4EA27"],[0.96655518394648832,"#F3EB27"],[0.96989966555183948,"#F3ED26"],[0.97324414715719065,"#F3EE26"],[0.97658862876254182,"#F2F025"],[0.97993311036789299,"#F2F125"],[0.98327759197324416,"#F2F224"],[0.98662207357859533,"#F1F423"],[0.98996655518394649,"#F1F523"],[0.99331103678929766,"#F1F622"],[0.99665551839464883,"#F0F822"],[1,"#F0F921"]],"colorbar":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"thickness":23.039999999999996,"title":"Ridership","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":18.596928185969279},"tickmode":"array","ticktext":["100,000","200,000"],"tickvals":[0.33631108638589313,0.6825761620442129],"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":14.877542548775427},"ticklen":2,"len":0.5}},"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":51.334163553341632,"r":9.2984640929846396,"b":51.141552511415526,"l":69.738480697384816},"font":{"color":"rgba(0,0,0,1)","family":"","size":18.596928185969279},"title":{"text":"🗺 Subway Ridership Heatmap (2020–2023)","font":{"color":"rgba(0,0,0,1)","family":"","size":22.316313823163139},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,4.5999999999999996],"tickmode":"array","ticktext":["2020","2021","2022","2023"],"tickvals":[1,2,3,4],"categoryorder":"array","categoryarray":["2020","2021","2022","2023"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.6492320464923198,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":14.877542548775427},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.8453149175440583,"zeroline":false,"anchor":"y","title":{"text":"Year","font":{"color":"rgba(0,0,0,1)","family":"","size":18.596928185969279}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,10.6],"tickmode":"array","ticktext":["10023","10128","11217","11238","11215","11216","11201","11222","10016","11221"],"tickvals":[1,2,3,4,5,6.0000000000000009,7,8,9,10],"categoryorder":"array","categoryarray":["10023","10128","11217","11238","11215","11216","11201","11222","10016","11221"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.6492320464923198,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":14.87754254877543},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.8453149175440583,"zeroline":false,"anchor":"x","title":{"text":"ZIP Code","font":{"color":"rgba(0,0,0,1)","family":"","size":18.596928185969279}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.877542548775427},"title":{"text":"Ridership","font":{"color":"rgba(0,0,0,1)","family":"","size":18.596928185969279}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"42c0752da26":{"x":{},"y":{},"fill":{},"type":"heatmap"}},"cur_data":"42c0752da26","visdat":{"42c0752da26":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="interpretation-takeaways-1" class="level4" data-number="3.4.2">
+<h4 data-number="3.4.2" class="anchored" data-anchor-id="interpretation-takeaways-1"><span class="header-section-number">3.4.2</span> 📊 Interpretation &amp; Takeaways</h4>
+<p>The heatmap above visualizes annual subway ridership trends across the ten busiest ZIP codes in New York City from 2020 to 2023. Each tile’s color intensity represents the total ridership volume for a given ZIP code and year — with warmer tones (yellows and oranges) indicating higher ridership and cooler tones (dark purples) indicating lower ridership.</p>
+<ul>
+<li><p>Consistent leaders: ZIP codes like 10035 (East Harlem) and 10007 (Lower Manhattan) stand out with consistently high ridership levels across all years, despite the pandemic-induced drop.</p></li>
+<li><p>Steady decline post-2020: Most ZIP codes show a gradual decrease in ridership from 2020 to 2023, reflecting NYC’s sluggish recovery in transit usage following the rise of remote work.</p></li>
+<li><p>Lower-traffic ZIPs: Several ZIP codes (e.g., 10001, 10002, 10004) exhibit significantly lower ridership values, potentially due to reduced office density or slower economic rebound in those neighborhoods.</p></li>
+</ul>
+</section>
+</section>
+<section id="sub-question-3" class="level3" data-number="3.5">
+<h3 data-number="3.5" class="anchored" data-anchor-id="sub-question-3"><span class="header-section-number">3.5</span> 📍 Sub-Question 3</h3>
+<p><strong>Is there a negative correlation between remote work growth and transit ridership recovery across ZIP codes?</strong></p>
+<p>To test our hypothesis more broadly, we calculate correlation coefficients between remote work growth and ridership recovery. Do ZIPs with higher WFH growth generally show weaker subway recovery? This analysis reveals city-wide trends.</p>
+<section id="visualization-2" class="level4" data-number="3.5.1">
+<h4 data-number="3.5.1" class="anchored" data-anchor-id="visualization-2"><span class="header-section-number">3.5.1</span> 📊 Visualization</h4>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>zip_recovery_all_years <span class="ot">&lt;-</span> subway_long <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">group_by</span>(zip) <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">mutate</span>(<span class="at">recovery_index =</span> annual_ridership <span class="sc">/</span> annual_ridership[year <span class="sc">==</span> <span class="dv">2020</span>]) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(recovery_index) <span class="sc">&amp;</span> <span class="fu">is.finite</span>(recovery_index))</span>
+<span id="cb10-6"><a href="#cb10-6"></a></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="co"># Ensure ZIP formatting</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a>wfh_combined <span class="ot">&lt;-</span> wfh_combined <span class="sc">%&gt;%</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a>  <span class="fu">mutate</span>(<span class="at">zip =</span> stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="fu">as.character</span>(zip), <span class="dv">5</span>, <span class="at">pad =</span> <span class="st">"0"</span>))</span>
+<span id="cb10-10"><a href="#cb10-10"></a></span>
+<span id="cb10-11"><a href="#cb10-11"></a>zip_recovery_all_years <span class="ot">&lt;-</span> zip_recovery_all_years <span class="sc">%&gt;%</span></span>
+<span id="cb10-12"><a href="#cb10-12"></a>  <span class="fu">mutate</span>(<span class="at">zip =</span> stringr<span class="sc">::</span><span class="fu">str_pad</span>(zip, <span class="dv">5</span>, <span class="at">pad =</span> <span class="st">"0"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-13"><a href="#cb10-13"></a>  <span class="fu">left_join</span>(wfh_combined, <span class="at">by =</span> <span class="st">"zip"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-14"><a href="#cb10-14"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(wfh_change))</span>
+<span id="cb10-15"><a href="#cb10-15"></a></span>
+<span id="cb10-16"><a href="#cb10-16"></a><span class="co"># Bin WFH into quantile-based categories</span></span>
+<span id="cb10-17"><a href="#cb10-17"></a>zip_binned <span class="ot">&lt;-</span> zip_recovery_all_years <span class="sc">%&gt;%</span></span>
+<span id="cb10-18"><a href="#cb10-18"></a>  <span class="fu">mutate</span>(<span class="at">wfh_group =</span> <span class="fu">ntile</span>(wfh_change, <span class="dv">3</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-19"><a href="#cb10-19"></a>  <span class="fu">mutate</span>(<span class="at">wfh_group =</span> <span class="fu">factor</span>(wfh_group, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Low WFH"</span>, <span class="st">"Medium WFH"</span>, <span class="st">"High     WFH"</span>)))</span>
+<span id="cb10-20"><a href="#cb10-20"></a></span>
+<span id="cb10-21"><a href="#cb10-21"></a><span class="co"># Prep: calculate average recovery index per group/year</span></span>
+<span id="cb10-22"><a href="#cb10-22"></a>recovery_trends <span class="ot">&lt;-</span> zip_binned <span class="sc">%&gt;%</span></span>
+<span id="cb10-23"><a href="#cb10-23"></a>  <span class="fu">group_by</span>(wfh_group, year) <span class="sc">%&gt;%</span></span>
+<span id="cb10-24"><a href="#cb10-24"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb10-25"><a href="#cb10-25"></a>    <span class="at">avg_recovery =</span> <span class="fu">mean</span>(recovery_index, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-26"><a href="#cb10-26"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb10-27"><a href="#cb10-27"></a>  )</span>
+<span id="cb10-28"><a href="#cb10-28"></a></span>
+<span id="cb10-29"><a href="#cb10-29"></a><span class="co"># Plot: Line chart with shaded area</span></span>
+<span id="cb10-30"><a href="#cb10-30"></a><span class="fu">ggplot</span>(recovery_trends, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> avg_recovery, <span class="at">color =</span> wfh_group, <span class="at">fill =</span>    wfh_group)) <span class="sc">+</span></span>
+<span id="cb10-31"><a href="#cb10-31"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb10-32"><a href="#cb10-32"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb10-33"><a href="#cb10-33"></a>  <span class="fu">geom_area</span>(<span class="at">alpha =</span> <span class="fl">0.15</span>, <span class="at">position =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb10-34"><a href="#cb10-34"></a>  <span class="fu">scale_color_viridis_d</span>(<span class="at">option =</span> <span class="st">"D"</span>, <span class="at">begin =</span> <span class="fl">0.2</span>, <span class="at">end =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb10-35"><a href="#cb10-35"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">"D"</span>, <span class="at">begin =</span> <span class="fl">0.2</span>, <span class="at">end =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb10-36"><a href="#cb10-36"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">accuracy =</span> <span class="dv">1</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,    <span class="cn">NA</span>)) <span class="sc">+</span></span>
+<span id="cb10-37"><a href="#cb10-37"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-38"><a href="#cb10-38"></a>    <span class="at">title =</span> <span class="st">"📈 Subway Ridership Recovery (2020–2023)"</span>,</span>
+<span id="cb10-39"><a href="#cb10-39"></a>    <span class="at">subtitle =</span> <span class="st">"Average recovery index by WFH group (2020 baseline = 100%)"</span>,</span>
+<span id="cb10-40"><a href="#cb10-40"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb10-41"><a href="#cb10-41"></a>    <span class="at">y =</span> <span class="st">"Recovery Index"</span>,</span>
+<span id="cb10-42"><a href="#cb10-42"></a>    <span class="at">color =</span> <span class="st">"WFH Group"</span>,</span>
+<span id="cb10-43"><a href="#cb10-43"></a>    <span class="at">fill =</span> <span class="st">"WFH Group"</span></span>
+<span id="cb10-44"><a href="#cb10-44"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-45"><a href="#cb10-45"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">+</span></span>
+<span id="cb10-46"><a href="#cb10-46"></a>  <span class="fu">theme</span>(</span>
+<span id="cb10-47"><a href="#cb10-47"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb10-48"><a href="#cb10-48"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb10-49"><a href="#cb10-49"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb10-50"><a href="#cb10-50"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb10-51"><a href="#cb10-51"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="final-project_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="interpretation-takeaways-2" class="level4" data-number="3.5.2">
+<h4 data-number="3.5.2" class="anchored" data-anchor-id="interpretation-takeaways-2"><span class="header-section-number">3.5.2</span> 📊 Interpretation &amp; Takeaways</h4>
+<p>This line plot shows average subway ridership recovery across ZIP code groups with different levels of remote work growth between 2020 and 2023. ZIPs are divided into Low, Medium, and High WFH tiers, and the recovery index is tracked annually.</p>
+<ul>
+<li><p>Across all years, ZIPs with higher remote work growth consistently show lower average subway recovery, especially by 2023.</p></li>
+<li><p>In 2021, Medium-WFH areas rebounded quickly, likely due to more hybrid or in-person work. But by 2023, Low-WFH ZIPs pulled ahead with the strongest recovery, while High-WFH ZIPs remained far below baseline.</p></li>
+</ul>
+<p>This supports a directional trend: ZIP codes with higher WFH growth tend to recover more slowly in terms of subway usage, reinforcing the long-term impact of remote work on transit behavior.</p>
+</section>
+</section>
+<section id="sub-question-4" class="level3" data-number="3.6">
+<h3 data-number="3.6" class="anchored" data-anchor-id="sub-question-4"><span class="header-section-number">3.6</span> 🚇 Sub-Question 4</h3>
+<p><strong>Did boroughs with lower remote work shifts see stronger subway recovery?</strong></p>
+<p>Finally, we zoom out to the borough level. By aggregating recovery trends and WFH changes, we assess whether outer boroughs — traditionally more transit-reliant — bounced back faster than Manhattan, the WFH capital.</p>
+<section id="visualization-3" class="level4" data-number="3.6.1">
+<h4 data-number="3.6.1" class="anchored" data-anchor-id="visualization-3"><span class="header-section-number">3.6.1</span> 📊 Visualization</h4>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Start with subway data and keep one row per ZIP-borough combo</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>  zip_boro_crosswalk <span class="ot">&lt;-</span> subway_all_cleaned <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>    <span class="fu">distinct</span>(zip, boro) <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>    <span class="fu">mutate</span>(<span class="at">zip =</span> stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="fu">as.character</span>(zip), <span class="dv">5</span>, <span class="at">pad =</span> <span class="st">"0"</span>))</span>
+<span id="cb11-5"><a href="#cb11-5"></a>  </span>
+<span id="cb11-6"><a href="#cb11-6"></a>  <span class="co"># Join borough info to remote work data</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>  wfh_boro <span class="ot">&lt;-</span> wfh_combined <span class="sc">%&gt;%</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>    <span class="fu">mutate</span>(<span class="at">zip =</span> stringr<span class="sc">::</span><span class="fu">str_pad</span>(zip, <span class="dv">5</span>, <span class="at">pad =</span> <span class="st">"0"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a>    <span class="fu">left_join</span>(zip_boro_crosswalk, <span class="at">by =</span> <span class="st">"zip"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(boro))</span>
+<span id="cb11-11"><a href="#cb11-11"></a>  </span>
+<span id="cb11-12"><a href="#cb11-12"></a>  boro_wfh <span class="ot">&lt;-</span> wfh_boro <span class="sc">%&gt;%</span></span>
+<span id="cb11-13"><a href="#cb11-13"></a>    <span class="fu">group_by</span>(boro) <span class="sc">%&gt;%</span></span>
+<span id="cb11-14"><a href="#cb11-14"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb11-15"><a href="#cb11-15"></a>      <span class="at">avg_wfh_change =</span> <span class="fu">mean</span>(wfh_change, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-16"><a href="#cb11-16"></a>      <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb11-17"><a href="#cb11-17"></a>    )</span>
+<span id="cb11-18"><a href="#cb11-18"></a>  </span>
+<span id="cb11-19"><a href="#cb11-19"></a>  boro_recovery <span class="ot">&lt;-</span> subway_all_cleaned <span class="sc">%&gt;%</span></span>
+<span id="cb11-20"><a href="#cb11-20"></a>    <span class="fu">select</span>(boro, zip, x2020, x2021, x2022, x2023) <span class="sc">%&gt;%</span></span>
+<span id="cb11-21"><a href="#cb11-21"></a>    <span class="fu">pivot_longer</span>(</span>
+<span id="cb11-22"><a href="#cb11-22"></a>      <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"x20"</span>),</span>
+<span id="cb11-23"><a href="#cb11-23"></a>      <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb11-24"><a href="#cb11-24"></a>      <span class="at">names_prefix =</span> <span class="st">"x"</span>,</span>
+<span id="cb11-25"><a href="#cb11-25"></a>      <span class="at">values_to =</span> <span class="st">"annual_ridership"</span></span>
+<span id="cb11-26"><a href="#cb11-26"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb11-27"><a href="#cb11-27"></a>    <span class="fu">group_by</span>(boro, year) <span class="sc">%&gt;%</span></span>
+<span id="cb11-28"><a href="#cb11-28"></a>    <span class="fu">summarise</span>(<span class="at">total_ridership =</span> <span class="fu">sum</span>(annual_ridership, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span>         <span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-29"><a href="#cb11-29"></a>    <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, <span class="at">values_from =</span> total_ridership) <span class="sc">%&gt;%</span></span>
+<span id="cb11-30"><a href="#cb11-30"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb11-31"><a href="#cb11-31"></a>      <span class="at">recovery_2023 =</span> <span class="st">`</span><span class="at">2023</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">2020</span><span class="st">`</span>,</span>
+<span id="cb11-32"><a href="#cb11-32"></a>      <span class="at">recovery_2022 =</span> <span class="st">`</span><span class="at">2022</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">2020</span><span class="st">`</span>,</span>
+<span id="cb11-33"><a href="#cb11-33"></a>      <span class="at">recovery_2021 =</span> <span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">2020</span><span class="st">`</span></span>
+<span id="cb11-34"><a href="#cb11-34"></a>    )</span>
+<span id="cb11-35"><a href="#cb11-35"></a>  </span>
+<span id="cb11-36"><a href="#cb11-36"></a>  </span>
+<span id="cb11-37"><a href="#cb11-37"></a>  boro_combined <span class="ot">&lt;-</span> boro_recovery <span class="sc">%&gt;%</span></span>
+<span id="cb11-38"><a href="#cb11-38"></a>    <span class="fu">left_join</span>(boro_wfh, <span class="at">by =</span> <span class="st">"boro"</span>)</span>
+<span id="cb11-39"><a href="#cb11-39"></a></span>
+<span id="cb11-40"><a href="#cb11-40"></a><span class="co"># Reshape for slope chart</span></span>
+<span id="cb11-41"><a href="#cb11-41"></a>boro_long <span class="ot">&lt;-</span> boro_combined <span class="sc">%&gt;%</span></span>
+<span id="cb11-42"><a href="#cb11-42"></a>  <span class="fu">select</span>(boro, recovery_2021, recovery_2022, recovery_2023, avg_wfh_change) <span class="sc">%&gt;%</span></span>
+<span id="cb11-43"><a href="#cb11-43"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb11-44"><a href="#cb11-44"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"recovery_"</span>),</span>
+<span id="cb11-45"><a href="#cb11-45"></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb11-46"><a href="#cb11-46"></a>    <span class="at">names_prefix =</span> <span class="st">"recovery_"</span>,</span>
+<span id="cb11-47"><a href="#cb11-47"></a>    <span class="at">values_to =</span> <span class="st">"recovery"</span></span>
+<span id="cb11-48"><a href="#cb11-48"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb11-49"><a href="#cb11-49"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.integer</span>(year))</span>
+<span id="cb11-50"><a href="#cb11-50"></a></span>
+<span id="cb11-51"><a href="#cb11-51"></a><span class="co"># Plot with direct labels</span></span>
+<span id="cb11-52"><a href="#cb11-52"></a><span class="co"># Step: Create tidy bar chart data</span></span>
+<span id="cb11-53"><a href="#cb11-53"></a>boro_bar <span class="ot">&lt;-</span> boro_combined <span class="sc">%&gt;%</span></span>
+<span id="cb11-54"><a href="#cb11-54"></a>  <span class="fu">select</span>(boro, recovery_2021, recovery_2022, recovery_2023) <span class="sc">%&gt;%</span></span>
+<span id="cb11-55"><a href="#cb11-55"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb11-56"><a href="#cb11-56"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"recovery_"</span>),</span>
+<span id="cb11-57"><a href="#cb11-57"></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb11-58"><a href="#cb11-58"></a>    <span class="at">names_prefix =</span> <span class="st">"recovery_"</span>,</span>
+<span id="cb11-59"><a href="#cb11-59"></a>    <span class="at">values_to =</span> <span class="st">"recovery"</span></span>
+<span id="cb11-60"><a href="#cb11-60"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb11-61"><a href="#cb11-61"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.integer</span>(year))</span>
+<span id="cb11-62"><a href="#cb11-62"></a>boro_bar_clean <span class="ot">&lt;-</span> boro_bar <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(boro))</span>
+<span id="cb11-63"><a href="#cb11-63"></a></span>
+<span id="cb11-64"><a href="#cb11-64"></a></span>
+<span id="cb11-65"><a href="#cb11-65"></a><span class="fu">ggplot</span>(boro_bar_clean, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(year), <span class="at">y =</span> recovery, <span class="at">fill =</span> boro)) <span class="sc">+</span></span>
+<span id="cb11-66"><a href="#cb11-66"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.75</span>), <span class="at">width =</span> <span class="fl">0.6</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb11-67"><a href="#cb11-67"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb11-68"><a href="#cb11-68"></a>    <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(recovery <span class="sc">*</span> <span class="dv">100</span>), <span class="st">"%"</span>)),</span>
+<span id="cb11-69"><a href="#cb11-69"></a>    <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.75</span>),</span>
+<span id="cb11-70"><a href="#cb11-70"></a>    <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>,</span>
+<span id="cb11-71"><a href="#cb11-71"></a>    <span class="at">size =</span> <span class="fl">4.5</span>,</span>
+<span id="cb11-72"><a href="#cb11-72"></a>    <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
+<span id="cb11-73"><a href="#cb11-73"></a>    <span class="at">color =</span> <span class="st">"black"</span></span>
+<span id="cb11-74"><a href="#cb11-74"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-75"><a href="#cb11-75"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span></span>
+<span id="cb11-76"><a href="#cb11-76"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb11-77"><a href="#cb11-77"></a>    <span class="at">labels =</span> <span class="fu">percent_format</span>(<span class="at">accuracy =</span> <span class="dv">1</span>),</span>
+<span id="cb11-78"><a href="#cb11-78"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.2</span>),</span>
+<span id="cb11-79"><a href="#cb11-79"></a>    <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.1</span>))</span>
+<span id="cb11-80"><a href="#cb11-80"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-81"><a href="#cb11-81"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-82"><a href="#cb11-82"></a>    <span class="at">title =</span> <span class="st">"🚇 Borough-Level Subway Ridership Recovery</span><span class="sc">\n</span><span class="st">(2021–2023)"</span>,</span>
+<span id="cb11-83"><a href="#cb11-83"></a>    <span class="at">subtitle =</span> <span class="st">"Compared to 2020 baseline (100%) — grouped by year and borough"</span>,</span>
+<span id="cb11-84"><a href="#cb11-84"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb11-85"><a href="#cb11-85"></a>    <span class="at">y =</span> <span class="st">"Recovery (%)"</span>,</span>
+<span id="cb11-86"><a href="#cb11-86"></a>    <span class="at">fill =</span> <span class="st">"Borough"</span></span>
+<span id="cb11-87"><a href="#cb11-87"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-88"><a href="#cb11-88"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">+</span></span>
+<span id="cb11-89"><a href="#cb11-89"></a>  <span class="fu">theme</span>(</span>
+<span id="cb11-90"><a href="#cb11-90"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">18</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb11-91"><a href="#cb11-91"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">13</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb11-92"><a href="#cb11-92"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb11-93"><a href="#cb11-93"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">13</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb11-94"><a href="#cb11-94"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb11-95"><a href="#cb11-95"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb11-96"><a href="#cb11-96"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb11-97"><a href="#cb11-97"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb11-98"><a href="#cb11-98"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb11-99"><a href="#cb11-99"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="final-project_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="interpretation-takeaways-3" class="level4" data-number="3.6.2">
+<h4 data-number="3.6.2" class="anchored" data-anchor-id="interpretation-takeaways-3"><span class="header-section-number">3.6.2</span> 📊 Interpretation &amp; Takeaways</h4>
+<p>This grouped bar chart shows subway ridership recovery by borough from 2021 to 2023, benchmarked against 2020 levels.</p>
+<ul>
+<li><p>🚇 In 2021, outer boroughs like The Bronx and Queens showed the strongest rebound, reaching over 85–90% of their pre-pandemic ridership.</p></li>
+<li><p>⬇️ By 2023, however, all boroughs saw noticeable drops, with ridership stabilizing around 32–48%, suggesting that initial recovery wasn’t sustained.</p></li>
+<li><p>🏙️ Manhattan maintained relatively steadier recovery rates over time, likely due to its concentration of hybrid/remote jobs.</p></li>
+<li><p>🚫 Staten Island is not shown, as it is served by the Staten Island Railway, which is reported separately.</p></li>
+</ul>
+<p>These trends suggest that boroughs with lower WFH growth rebounded faster early on, but long-term ridership recovery remains uneven. Employment type and transit reliance appear to play major roles in borough-level variation.</p>
+</section>
+</section>
+<section id="conclusion" class="level3" data-number="3.7">
+<h3 data-number="3.7" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">3.7</span> Conclusion ✅</h3>
+<p>This project traced the evolving relationship between remote work and subway ridership in New York City from 2020 to 2023 a period marked by disruption, adaptation, and uneven recovery.</p>
+</section>
+<section id="connecting-the-dots-from-sub-questions-to-the-bigger-picture" class="level3" data-number="3.8">
+<h3 data-number="3.8" class="anchored" data-anchor-id="connecting-the-dots-from-sub-questions-to-the-bigger-picture"><span class="header-section-number">3.8</span> 🚦 Connecting the Dots: From Sub-Questions to the Bigger Picture</h3>
+<p>By systematically exploring each of the four sub-questions, we were able to meaningfully address our central motivating question:</p>
+<p><strong>“How has the rise of remote work since the COVID-19 pandemic impacted New York City subway ridership and transit system dynamics?”</strong></p>
+<p>Our analysis revealed that ZIP codes with higher remote work growth tended to experience slower subway ridership recovery, especially in central business districts like Manhattan. Conversely, neighborhoods with lower WFH adoption saw comparatively stronger rebounds. We also observed borough-level disparities and shifts in commuting patterns across years.</p>
+<p>These findings suggest that remote work has not just temporarily reduced subway usage—it has reshaped urban mobility in lasting ways. The sub-questions allowed us to deconstruct this complex issue and build toward a data-driven understanding of NYC’s evolving transit landscape in the remote work era.</p>
+</section>
+<section id="key-findings" class="level3" data-number="3.9">
+<h3 data-number="3.9" class="anchored" data-anchor-id="key-findings"><span class="header-section-number">3.9</span> 📌 Key Findings</h3>
+<ul>
+<li><p>📉 ZIP codes with the largest increases in remote work like 11215 and 11201 showed the slowest subway ridership recovery, especially in central areas like Manhattan.</p></li>
+<li><p>📈 Outer boroughs such as The Bronx and Queens, with lower WFH growth, showed stronger recovery likely due to more essential and in-person workforces.</p></li>
+<li><p>🔄 The link between remote work and transit recovery is directional but not consistent; recovery levels varied by year and location, suggesting that other factors (like income, job type, or transit service changes) also influence ridership trends.</p></li>
+</ul>
+</section>
+<section id="future-directions" class="level3" data-number="3.10">
+<h3 data-number="3.10" class="anchored" data-anchor-id="future-directions"><span class="header-section-number">3.10</span> 🔮 Future Directions</h3>
+<ul>
+<li><p>Include MTA bus and Staten Island Railway data for a more complete view.</p></li>
+<li><p>Analyze income, occupation, or fare type to refine understanding of ridership changes.</p></li>
+<li><p>Compare NYC to other major metro areas like Chicago or DC.</p></li>
+<li><p>Build a predictive model for ridership based on remote work trends.</p></li>
+</ul>
+
+
+<!-- -->
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb12" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="an">title:</span><span class="co"> "🚇📉 Remote Work vs. Ridership: NYC’s Great Subway Shift"</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="an">author:</span><span class="co"> "Shubh Goyal"</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="an">project:</span><span class="co"> .</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="an">format:</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="co">  html:</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="co">    theme: litera</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="co">    css: styles.css</span></span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="co">    toc: true</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="co">    toc-depth: 4</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="co">    number-sections: true</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a><span class="co">    page-layout: full</span></span>
+<span id="cb12-13"><a href="#cb12-13"></a><span class="co">    smooth-scroll: true</span></span>
+<span id="cb12-14"><a href="#cb12-14"></a><span class="co">    code-copy: true</span></span>
+<span id="cb12-15"><a href="#cb12-15"></a><span class="co">    code-overflow: wrap</span></span>
+<span id="cb12-16"><a href="#cb12-16"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb12-17"><a href="#cb12-17"></a><span class="an">execute:</span></span>
+<span id="cb12-18"><a href="#cb12-18"></a><span class="co">  echo: true</span></span>
+<span id="cb12-19"><a href="#cb12-19"></a><span class="co">  eval: true</span></span>
+<span id="cb12-20"><a href="#cb12-20"></a><span class="co">  warning: false</span></span>
+<span id="cb12-21"><a href="#cb12-21"></a><span class="co">  message: false</span></span>
+<span id="cb12-22"><a href="#cb12-22"></a><span class="co">---</span></span>
+<span id="cb12-23"><a href="#cb12-23"></a></span>
+<span id="cb12-24"><a href="#cb12-24"></a><span class="fu">## 📘 Introduction</span></span>
+<span id="cb12-25"><a href="#cb12-25"></a></span>
+<span id="cb12-26"><a href="#cb12-26"></a>The COVID-19 pandemic didn’t just shut down offices — it shifted the very foundation of how New Yorkers live and move through their city. As white-collar workers traded subway platforms for Zoom calls and dining room tables became workstations, one of the world's busiest transit systems came to a near halt.</span>
+<span id="cb12-27"><a href="#cb12-27"></a></span>
+<span id="cb12-28"><a href="#cb12-28"></a>Now, several years later, remote and hybrid work are no longer temporary. They’ve become part of the new urban normal. But what does that mean for the New York City subway system, which relies on daily foot traffic to fund operations, justify service levels, and support the city’s broader economic ecosystem?</span>
+<span id="cb12-29"><a href="#cb12-29"></a></span>
+<span id="cb12-30"><a href="#cb12-30"></a>This project explores the intersection of remote work and transit behavior, asking one key question:</span>
+<span id="cb12-31"><a href="#cb12-31"></a></span>
+<span id="cb12-32"><a href="#cb12-32"></a><span class="at">&gt; **How has the rise of remote work since the COVID-19 pandemic impacted New York City subway ridership and transit system dynamics?**</span></span>
+<span id="cb12-33"><a href="#cb12-33"></a></span>
+<span id="cb12-34"><a href="#cb12-34"></a>To answer this, we combine data from multiple sources:</span>
+<span id="cb12-35"><a href="#cb12-35"></a></span>
+<span id="cb12-36"><a href="#cb12-36"></a><span class="ss">-   </span>📊 Subway ridership reports (2020–2023) published by the MTA</span>
+<span id="cb12-37"><a href="#cb12-37"></a></span>
+<span id="cb12-38"><a href="#cb12-38"></a><span class="ss">-   </span>🏠 ACS ZIP-level estimates of remote work adoption in 2020 and 2023</span>
+<span id="cb12-39"><a href="#cb12-39"></a></span>
+<span id="cb12-40"><a href="#cb12-40"></a><span class="ss">-   </span>🗺️ Geographic shapefiles and spatial joins to connect subway stations with residential ZIP codes and boroughs</span>
+<span id="cb12-41"><a href="#cb12-41"></a></span>
+<span id="cb12-42"><a href="#cb12-42"></a>Through data cleaning, integration, and visualization, we track how ridership has (or hasn’t) rebounded — and whether that recovery is tied to remote work trends at the neighborhood and borough levels.</span>
+<span id="cb12-43"><a href="#cb12-43"></a></span>
+<span id="cb12-44"><a href="#cb12-44"></a>Ultimately, this analysis not only maps NYC’s mobility shift but also poses deeper questions about equity, infrastructure planning, and the future of commuting in an increasingly remote-capable world.</span>
+<span id="cb12-45"><a href="#cb12-45"></a></span>
+<span id="cb12-46"><a href="#cb12-46"></a><span class="fu">## 🧰 Data Acquisition &amp; Preparation</span></span>
+<span id="cb12-47"><a href="#cb12-47"></a></span>
+<span id="cb12-48"><a href="#cb12-48"></a>This project uses multiple datasets, all processed from scratch to ensure transparency and reproducibility.</span>
+<span id="cb12-49"><a href="#cb12-49"></a></span>
+<span id="cb12-50"><a href="#cb12-50"></a><span class="fu">### 🔹 Remote Work Data (ACS)</span></span>
+<span id="cb12-51"><a href="#cb12-51"></a></span>
+<span id="cb12-52"><a href="#cb12-52"></a><span class="ss">-   </span>Pulled using the <span class="in">`tidycensus`</span> package with API key.</span>
+<span id="cb12-53"><a href="#cb12-53"></a><span class="ss">-   </span>Variable used: <span class="in">`B08006_017`</span> = Workers who primarily worked from home.</span>
+<span id="cb12-54"><a href="#cb12-54"></a><span class="ss">-   </span>Data retrieved for ZIP Code Tabulation Areas (ZCTAs) from 2020 to 2023.</span>
+<span id="cb12-55"><a href="#cb12-55"></a></span>
+<span id="cb12-58"><a href="#cb12-58"></a><span class="in">```{r}</span></span>
+<span id="cb12-59"><a href="#cb12-59"></a><span class="co"># Import Required Libraries </span></span>
+<span id="cb12-60"><a href="#cb12-60"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb12-61"><a href="#cb12-61"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb12-62"><a href="#cb12-62"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb12-63"><a href="#cb12-63"></a><span class="fu">library</span>(sf)</span>
+<span id="cb12-64"><a href="#cb12-64"></a><span class="fu">library</span>(tidygeocoder)</span>
+<span id="cb12-65"><a href="#cb12-65"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-66"><a href="#cb12-66"></a><span class="fu">library</span>(scales)</span>
+<span id="cb12-67"><a href="#cb12-67"></a><span class="fu">library</span>(viridis)</span>
+<span id="cb12-68"><a href="#cb12-68"></a><span class="fu">library</span>(tidycensus)</span>
+<span id="cb12-69"><a href="#cb12-69"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb12-70"><a href="#cb12-70"></a><span class="fu">library</span>(broom)</span>
+<span id="cb12-71"><a href="#cb12-71"></a></span>
+<span id="cb12-72"><a href="#cb12-72"></a><span class="co"># Create folders if not exist</span></span>
+<span id="cb12-73"><a href="#cb12-73"></a><span class="fu">dir.create</span>(<span class="st">"data"</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-74"><a href="#cb12-74"></a><span class="fu">dir.create</span>(<span class="st">"scripts"</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-75"><a href="#cb12-75"></a><span class="fu">dir.create</span>(<span class="st">"figures"</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-76"><a href="#cb12-76"></a><span class="fu">dir.create</span>(<span class="st">"report"</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-77"><a href="#cb12-77"></a></span>
+<span id="cb12-78"><a href="#cb12-78"></a><span class="co"># Set your Census API key</span></span>
+<span id="cb12-79"><a href="#cb12-79"></a><span class="co"># Sign up at https://api.census.gov/data/key_signup.html and paste below</span></span>
+<span id="cb12-80"><a href="#cb12-80"></a><span class="fu">census_api_key</span>(<span class="st">"f28aeb62737e98e4d42504b400f917e145ecdc03"</span>, <span class="at">install =</span> <span class="cn">TRUE</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-81"><a href="#cb12-81"></a><span class="fu">readRenviron</span>(<span class="st">"~/.Renviron"</span>)</span>
+<span id="cb12-82"><a href="#cb12-82"></a></span>
+<span id="cb12-83"><a href="#cb12-83"></a><span class="co"># Function to pull % working from home by ZCTA</span></span>
+<span id="cb12-84"><a href="#cb12-84"></a>get_wfh_by_zip <span class="ot">&lt;-</span> <span class="cf">function</span>(year) {</span>
+<span id="cb12-85"><a href="#cb12-85"></a>  <span class="fu">get_acs</span>(</span>
+<span id="cb12-86"><a href="#cb12-86"></a>    <span class="at">geography =</span> <span class="st">"zip code tabulation area"</span>,</span>
+<span id="cb12-87"><a href="#cb12-87"></a>    <span class="at">variables =</span> <span class="fu">c</span>(<span class="at">wfh =</span> <span class="st">"B08006_017"</span>),  <span class="co"># Worked from home</span></span>
+<span id="cb12-88"><a href="#cb12-88"></a>    <span class="at">year =</span> year,</span>
+<span id="cb12-89"><a href="#cb12-89"></a>    <span class="at">survey =</span> <span class="st">"acs5"</span>,                    <span class="co"># Change to 5-year ACS</span></span>
+<span id="cb12-90"><a href="#cb12-90"></a>    <span class="at">output =</span> <span class="st">"wide"</span></span>
+<span id="cb12-91"><a href="#cb12-91"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb12-92"><a href="#cb12-92"></a>    <span class="fu">select</span>(GEOID, wfhE) <span class="sc">|&gt;</span></span>
+<span id="cb12-93"><a href="#cb12-93"></a>    <span class="fu">rename</span>(<span class="at">zip =</span> GEOID, <span class="sc">!!</span><span class="fu">paste0</span>(<span class="st">"wfh_"</span>, year) <span class="sc">:</span><span class="er">=</span> wfhE)</span>
+<span id="cb12-94"><a href="#cb12-94"></a>}</span>
+<span id="cb12-95"><a href="#cb12-95"></a></span>
+<span id="cb12-96"><a href="#cb12-96"></a></span>
+<span id="cb12-97"><a href="#cb12-97"></a><span class="co"># Get data from 2020 to 2023</span></span>
+<span id="cb12-98"><a href="#cb12-98"></a>wfh_2020 <span class="ot">&lt;-</span> <span class="fu">get_wfh_by_zip</span>(<span class="dv">2020</span>)</span>
+<span id="cb12-99"><a href="#cb12-99"></a>wfh_2021 <span class="ot">&lt;-</span> <span class="fu">get_wfh_by_zip</span>(<span class="dv">2021</span>)</span>
+<span id="cb12-100"><a href="#cb12-100"></a>wfh_2022 <span class="ot">&lt;-</span> <span class="fu">get_wfh_by_zip</span>(<span class="dv">2022</span>)</span>
+<span id="cb12-101"><a href="#cb12-101"></a>wfh_2023 <span class="ot">&lt;-</span> <span class="fu">get_wfh_by_zip</span>(<span class="dv">2023</span>)</span>
+<span id="cb12-102"><a href="#cb12-102"></a></span>
+<span id="cb12-103"><a href="#cb12-103"></a><span class="co"># Merge into one dataframe</span></span>
+<span id="cb12-104"><a href="#cb12-104"></a>wfh_combined <span class="ot">&lt;-</span> <span class="fu">reduce</span>(</span>
+<span id="cb12-105"><a href="#cb12-105"></a>  <span class="fu">list</span>(wfh_2020, wfh_2021, wfh_2022, wfh_2023),</span>
+<span id="cb12-106"><a href="#cb12-106"></a>  full_join,</span>
+<span id="cb12-107"><a href="#cb12-107"></a>  <span class="at">by =</span> <span class="st">"zip"</span></span>
+<span id="cb12-108"><a href="#cb12-108"></a>)</span>
+<span id="cb12-109"><a href="#cb12-109"></a></span>
+<span id="cb12-110"><a href="#cb12-110"></a><span class="co"># Add change column</span></span>
+<span id="cb12-111"><a href="#cb12-111"></a>wfh_combined <span class="ot">&lt;-</span> wfh_combined <span class="sc">|&gt;</span></span>
+<span id="cb12-112"><a href="#cb12-112"></a>  <span class="fu">mutate</span>(<span class="at">wfh_change =</span> wfh_2023 <span class="sc">-</span> wfh_2020)</span>
+<span id="cb12-113"><a href="#cb12-113"></a></span>
+<span id="cb12-114"><a href="#cb12-114"></a><span class="co"># Save as CSV</span></span>
+<span id="cb12-115"><a href="#cb12-115"></a><span class="fu">write_csv</span>(wfh_combined, <span class="st">"data/wfh_combined.csv"</span>)</span>
+<span id="cb12-116"><a href="#cb12-116"></a></span>
+<span id="cb12-117"><a href="#cb12-117"></a><span class="in">```</span></span>
+<span id="cb12-118"><a href="#cb12-118"></a></span>
+<span id="cb12-119"><a href="#cb12-119"></a><span class="fu">### 🔹 Subway Ridership Data (MTA)</span></span>
+<span id="cb12-120"><a href="#cb12-120"></a></span>
+<span id="cb12-121"><a href="#cb12-121"></a><span class="ss">-   </span>Four Excel files from 2020 to 2023 were loaded using <span class="in">`readxl`</span></span>
+<span id="cb12-122"><a href="#cb12-122"></a><span class="ss">-   </span>Station names geocoded to ZIPs using <span class="in">`tidygeocoder`</span> + shapefile join.</span>
+<span id="cb12-123"><a href="#cb12-123"></a></span>
+<span id="cb12-126"><a href="#cb12-126"></a><span class="in">```{r}</span></span>
+<span id="cb12-127"><a href="#cb12-127"></a>load_subway_year <span class="ot">&lt;-</span> <span class="cf">function</span>(file_path, year) {</span>
+<span id="cb12-128"><a href="#cb12-128"></a>    <span class="fu">read_excel</span>(file_path, <span class="at">skip =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span>  <span class="co"># skip the header row</span></span>
+<span id="cb12-129"><a href="#cb12-129"></a>      <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-130"><a href="#cb12-130"></a>      <span class="fu">mutate</span>(<span class="at">year =</span> year)</span>
+<span id="cb12-131"><a href="#cb12-131"></a>  }</span>
+<span id="cb12-132"><a href="#cb12-132"></a></span>
+<span id="cb12-133"><a href="#cb12-133"></a>subway_2020 <span class="ot">&lt;-</span> <span class="fu">load_subway_year</span>(<span class="st">"data/subway_ridership_2020.xlsx"</span>, <span class="dv">2020</span>)</span>
+<span id="cb12-134"><a href="#cb12-134"></a>subway_2021 <span class="ot">&lt;-</span> <span class="fu">load_subway_year</span>(<span class="st">"data/subway_ridership_2021.xlsx"</span>, <span class="dv">2021</span>)</span>
+<span id="cb12-135"><a href="#cb12-135"></a>subway_2022 <span class="ot">&lt;-</span> <span class="fu">load_subway_year</span>(<span class="st">"data/subway_ridership_2022.xlsx"</span>, <span class="dv">2022</span>)</span>
+<span id="cb12-136"><a href="#cb12-136"></a>subway_2023 <span class="ot">&lt;-</span> <span class="fu">load_subway_year</span>(<span class="st">"data/subway_ridership_2023.xlsx"</span>, <span class="dv">2023</span>)</span>
+<span id="cb12-137"><a href="#cb12-137"></a></span>
+<span id="cb12-138"><a href="#cb12-138"></a>subway_all <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(subway_2020, subway_2021, subway_2022, subway_2023)</span>
+<span id="cb12-139"><a href="#cb12-139"></a><span class="in">```</span></span>
+<span id="cb12-140"><a href="#cb12-140"></a></span>
+<span id="cb12-141"><a href="#cb12-141"></a><span class="fu">### 🔹 Station ZIP Matching</span></span>
+<span id="cb12-142"><a href="#cb12-142"></a></span>
+<span id="cb12-143"><a href="#cb12-143"></a><span class="ss">-   </span>Subway stations were geocoded using <span class="in">`arcgis`</span> method.</span>
+<span id="cb12-144"><a href="#cb12-144"></a><span class="ss">-   </span>Geocoded points were spatially joined to TIGER/Line ZCTA shapefiles.</span>
+<span id="cb12-145"><a href="#cb12-145"></a></span>
+<span id="cb12-148"><a href="#cb12-148"></a><span class="in">```{r}</span></span>
+<span id="cb12-149"><a href="#cb12-149"></a>station_coords <span class="ot">&lt;-</span> subway_all <span class="sc">%&gt;%</span></span>
+<span id="cb12-150"><a href="#cb12-150"></a>  <span class="fu">distinct</span>(<span class="at">station =</span> station_alphabetical_by_borough) <span class="sc">%&gt;%</span></span>
+<span id="cb12-151"><a href="#cb12-151"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(station)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-152"><a href="#cb12-152"></a>  <span class="fu">mutate</span>(<span class="at">full_address =</span> <span class="fu">paste</span>(station, <span class="st">"New York City, NY"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-153"><a href="#cb12-153"></a>  <span class="fu">geocode</span>(</span>
+<span id="cb12-154"><a href="#cb12-154"></a>    <span class="at">address =</span> full_address,</span>
+<span id="cb12-155"><a href="#cb12-155"></a>    <span class="at">method =</span> <span class="st">"arcgis"</span>,</span>
+<span id="cb12-156"><a href="#cb12-156"></a>    <span class="at">lat =</span> latitude,</span>
+<span id="cb12-157"><a href="#cb12-157"></a>    <span class="at">long =</span> longitude</span>
+<span id="cb12-158"><a href="#cb12-158"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb12-159"><a href="#cb12-159"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(latitude) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(longitude))</span>
+<span id="cb12-160"><a href="#cb12-160"></a></span>
+<span id="cb12-161"><a href="#cb12-161"></a>stations_sf <span class="ot">&lt;-</span> station_coords <span class="sc">%&gt;%</span></span>
+<span id="cb12-162"><a href="#cb12-162"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"longitude"</span>, <span class="st">"latitude"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb12-163"><a href="#cb12-163"></a></span>
+<span id="cb12-164"><a href="#cb12-164"></a>zcta_shapes <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/zcta_shapefiles/tl_2020_us_zcta520.shp"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-165"><a href="#cb12-165"></a>  <span class="fu">st_transform</span>(<span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb12-166"><a href="#cb12-166"></a></span>
+<span id="cb12-167"><a href="#cb12-167"></a></span>
+<span id="cb12-168"><a href="#cb12-168"></a>stations_with_zip <span class="ot">&lt;-</span> <span class="fu">st_join</span>(stations_sf, zcta_shapes, <span class="at">join =</span> st_within) <span class="sc">%&gt;%</span></span>
+<span id="cb12-169"><a href="#cb12-169"></a>  <span class="fu">select</span>(station, <span class="at">zip =</span> ZCTA5CE20) <span class="sc">%&gt;%</span></span>
+<span id="cb12-170"><a href="#cb12-170"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(zip))</span>
+<span id="cb12-171"><a href="#cb12-171"></a></span>
+<span id="cb12-172"><a href="#cb12-172"></a><span class="co"># Save as CSV</span></span>
+<span id="cb12-173"><a href="#cb12-173"></a><span class="fu">write_csv</span>(stations_with_zip <span class="sc">|&gt;</span> <span class="fu">st_drop_geometry</span>(), <span class="st">"data/station_zip_crosswalk.csv"</span>)</span>
+<span id="cb12-174"><a href="#cb12-174"></a></span>
+<span id="cb12-175"><a href="#cb12-175"></a>subway_all_cleaned <span class="ot">&lt;-</span> subway_all <span class="sc">%&gt;%</span></span>
+<span id="cb12-176"><a href="#cb12-176"></a>  <span class="fu">rename</span>(<span class="at">station =</span> station_alphabetical_by_borough) <span class="sc">%&gt;%</span></span>
+<span id="cb12-177"><a href="#cb12-177"></a>  <span class="fu">left_join</span>(stations_with_zip <span class="sc">|&gt;</span> <span class="fu">st_drop_geometry</span>(), <span class="at">by =</span> <span class="st">"station"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-178"><a href="#cb12-178"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(zip)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-179"><a href="#cb12-179"></a>  <span class="fu">mutate</span>(<span class="at">zip =</span> stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="fu">as.character</span>(zip), <span class="dv">5</span>, <span class="at">pad =</span> <span class="st">"0"</span>))</span>
+<span id="cb12-180"><a href="#cb12-180"></a></span>
+<span id="cb12-181"><a href="#cb12-181"></a>nyc_zips <span class="ot">&lt;-</span> subway_all_cleaned <span class="sc">%&gt;%</span></span>
+<span id="cb12-182"><a href="#cb12-182"></a>  <span class="fu">distinct</span>(zip) <span class="sc">%&gt;%</span></span>
+<span id="cb12-183"><a href="#cb12-183"></a>  <span class="fu">pull</span>(zip)</span>
+<span id="cb12-184"><a href="#cb12-184"></a></span>
+<span id="cb12-185"><a href="#cb12-185"></a><span class="in">```</span></span>
+<span id="cb12-186"><a href="#cb12-186"></a></span>
+<span id="cb12-187"><a href="#cb12-187"></a><span class="fu">## 🔍 Analysis</span></span>
+<span id="cb12-188"><a href="#cb12-188"></a></span>
+<span id="cb12-189"><a href="#cb12-189"></a><span class="fu">### **❓Motivating Question**</span></span>
+<span id="cb12-190"><a href="#cb12-190"></a></span>
+<span id="cb12-191"><a href="#cb12-191"></a><span class="at">&gt; **🚇💻 How has the rise of remote work since the COVID-19 pandemic impacted New York City subway ridership and transit system dynamics?**</span></span>
+<span id="cb12-192"><a href="#cb12-192"></a></span>
+<span id="cb12-193"><a href="#cb12-193"></a>Rather than assuming a city-wide story, this analysis asks: Where, exactly, did ridership recover, and where did it not? Did neighborhoods with surging remote work see sustained transit losses? Could borough-level commuting trends reveal structural shifts in how different communities depend on the subway?</span>
+<span id="cb12-194"><a href="#cb12-194"></a></span>
+<span id="cb12-195"><a href="#cb12-195"></a>The pandemic forced a once-daily ritual of commuting to become optional for many. But not all ZIP codes, jobs, or boroughs adapted equally. Some workers returned to the office quickly. Others never left. Meanwhile, essential workers continued riding the subway every day, even in the city’s darkest moments.</span>
+<span id="cb12-196"><a href="#cb12-196"></a></span>
+<span id="cb12-197"><a href="#cb12-197"></a>By pairing quantitative remote work data with subway ridership trends, we attempt to untangle how the rise of WFH reshaped urban movement. Instead of looking at raw totals, we explore localized transit recovery, uncovering hidden disparities across neighborhoods and boroughs. Our goal is not only to measure change, but to map how the very purpose of public transit has evolved post-pandemic.</span>
+<span id="cb12-198"><a href="#cb12-198"></a></span>
+<span id="cb12-199"><a href="#cb12-199"></a><span class="fu">### 📂 Deconstructing the Commute: Key Questions Explored</span></span>
+<span id="cb12-200"><a href="#cb12-200"></a></span>
+<span id="cb12-201"><a href="#cb12-201"></a>To explore the motivating question, we break it down into four sub-questions, each addressing a different aspect of the transit–WFH relationship.</span>
+<span id="cb12-202"><a href="#cb12-202"></a></span>
+<span id="cb12-203"><a href="#cb12-203"></a><span class="fu">### 📍 Sub-Question 1</span></span>
+<span id="cb12-204"><a href="#cb12-204"></a></span>
+<span id="cb12-205"><a href="#cb12-205"></a>**Which ZIP codes had the largest increase in remote work between 2020 and 2023?**</span>
+<span id="cb12-206"><a href="#cb12-206"></a></span>
+<span id="cb12-207"><a href="#cb12-207"></a>We begin by identifying NYC ZIP codes where remote work adoption increased the most. Using ACS 5-year estimates, we calculate changes in the number of workers reporting WFH status and spotlight the neighborhoods driving this shift.</span>
+<span id="cb12-208"><a href="#cb12-208"></a></span>
+<span id="cb12-211"><a href="#cb12-211"></a><span class="in">```{r}</span></span>
+<span id="cb12-212"><a href="#cb12-212"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb12-213"><a href="#cb12-213"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb12-214"><a href="#cb12-214"></a></span>
+<span id="cb12-215"><a href="#cb12-215"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb12-216"><a href="#cb12-216"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb12-217"><a href="#cb12-217"></a></span>
+<span id="cb12-218"><a href="#cb12-218"></a><span class="co"># Ensure ZIPs are 5-digit character strings</span></span>
+<span id="cb12-219"><a href="#cb12-219"></a>wfh_nyc <span class="ot">&lt;-</span> wfh_combined <span class="sc">%&gt;%</span></span>
+<span id="cb12-220"><a href="#cb12-220"></a>  <span class="fu">mutate</span>(<span class="at">zip =</span> stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="fu">as.character</span>(zip), <span class="dv">5</span>, <span class="at">pad =</span> <span class="st">"0"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-221"><a href="#cb12-221"></a>  <span class="fu">filter</span>(zip <span class="sc">%in%</span> nyc_zips)</span>
+<span id="cb12-222"><a href="#cb12-222"></a></span>
+<span id="cb12-223"><a href="#cb12-223"></a><span class="co"># Get top 10 ZIPs by WFH growth</span></span>
+<span id="cb12-224"><a href="#cb12-224"></a>top_10_wfh <span class="ot">&lt;-</span> wfh_nyc <span class="sc">%&gt;%</span></span>
+<span id="cb12-225"><a href="#cb12-225"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(wfh_change)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-226"><a href="#cb12-226"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(wfh_change)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-227"><a href="#cb12-227"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb12-228"><a href="#cb12-228"></a></span>
+<span id="cb12-229"><a href="#cb12-229"></a><span class="co"># Define MTA blue for reuse</span></span>
+<span id="cb12-230"><a href="#cb12-230"></a>mta_blue <span class="ot">&lt;-</span> <span class="st">"#003366"</span></span>
+<span id="cb12-231"><a href="#cb12-231"></a></span>
+<span id="cb12-232"><a href="#cb12-232"></a><span class="co"># Render Kable</span></span>
+<span id="cb12-233"><a href="#cb12-233"></a>top_10_wfh <span class="sc">%&gt;%</span></span>
+<span id="cb12-234"><a href="#cb12-234"></a>  <span class="fu">select</span>(zip, wfh_2020,wfh_2021, wfh_2022, wfh_2023, wfh_change) <span class="sc">%&gt;%</span></span>
+<span id="cb12-235"><a href="#cb12-235"></a>  <span class="fu">kable</span>(</span>
+<span id="cb12-236"><a href="#cb12-236"></a>    <span class="at">format =</span> <span class="st">"html"</span>,</span>
+<span id="cb12-237"><a href="#cb12-237"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"ZIP Code"</span>, <span class="st">"WFH in 2020"</span>, <span class="st">"WFH in 2021"</span>, <span class="st">"WFH in 2022"</span>, <span class="st">"WFH in     2023"</span>, <span class="st">"Change"</span>),</span>
+<span id="cb12-238"><a href="#cb12-238"></a>    <span class="at">align =</span> <span class="st">"c"</span>,</span>
+<span id="cb12-239"><a href="#cb12-239"></a>    <span class="at">digits =</span> <span class="dv">0</span>,</span>
+<span id="cb12-240"><a href="#cb12-240"></a>    <span class="at">caption =</span> <span class="st">"Estimated Remote Work Growth by ZIP Code (Top 10 NYC ZIPs)"</span></span>
+<span id="cb12-241"><a href="#cb12-241"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb12-242"><a href="#cb12-242"></a>  <span class="fu">kable_styling</span>(</span>
+<span id="cb12-243"><a href="#cb12-243"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>),</span>
+<span id="cb12-244"><a href="#cb12-244"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb12-245"><a href="#cb12-245"></a>    <span class="at">position =</span> <span class="st">"center"</span></span>
+<span id="cb12-246"><a href="#cb12-246"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb12-247"><a href="#cb12-247"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">background =</span> mta_blue, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-248"><a href="#cb12-248"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">background =</span> <span class="st">"#f8f8f8"</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-249"><a href="#cb12-249"></a></span>
+<span id="cb12-250"><a href="#cb12-250"></a></span>
+<span id="cb12-251"><a href="#cb12-251"></a><span class="in">```</span></span>
+<span id="cb12-252"><a href="#cb12-252"></a></span>
+<span id="cb12-253"><a href="#cb12-253"></a><span class="fu">#### 📊 Visualization</span></span>
+<span id="cb12-254"><a href="#cb12-254"></a></span>
+<span id="cb12-255"><a href="#cb12-255"></a>&lt;h2 style="font-size: 24px; color: #2c3e50; font-weight: bold;"&gt;</span>
+<span id="cb12-256"><a href="#cb12-256"></a></span>
+<span id="cb12-257"><a href="#cb12-257"></a>📊 ZIP Codes Ranked by Remote Work Growth (2020–2023)</span>
+<span id="cb12-258"><a href="#cb12-258"></a></span>
+<span id="cb12-259"><a href="#cb12-259"></a>&lt;/h2&gt;</span>
+<span id="cb12-260"><a href="#cb12-260"></a></span>
+<span id="cb12-261"><a href="#cb12-261"></a><span class="in">```{=html}</span></span>
+<span id="cb12-262"><a href="#cb12-262"></a><span class="in">&lt;img src="images/animated_wfh_growth_vertical.gif" </span></span>
+<span id="cb12-263"><a href="#cb12-263"></a><span class="in">     alt="Animated WFH Growth Chart" </span></span>
+<span id="cb12-264"><a href="#cb12-264"></a><span class="in">     style="width:100%; border-radius:12px;"&gt;</span></span>
+<span id="cb12-265"><a href="#cb12-265"></a><span class="in">```</span></span>
+<span id="cb12-266"><a href="#cb12-266"></a></span>
+<span id="cb12-267"><a href="#cb12-267"></a><span class="fu">#### 📊 Interpretation &amp; Takeaways</span></span>
+<span id="cb12-268"><a href="#cb12-268"></a></span>
+<span id="cb12-269"><a href="#cb12-269"></a>The plot above highlights the ZIP codes with the highest increase in remote work between 2020 and 2023. Unsurprisingly, most of these ZIPs are located in Manhattan and affluent parts of Brooklyn, which tend to have higher concentrations of office workers in remote-compatible industries (e.g., finance, tech, media).</span>
+<span id="cb12-270"><a href="#cb12-270"></a></span>
+<span id="cb12-271"><a href="#cb12-271"></a>For example, ZIP codes 11215 (Park Slope) and 11201 (Downtown Brooklyn) show among the highest spikes in WFH adoption, likely due to their professional demographic and proximity to tech and business districts. Manhattan neighborhoods like 10023 (Upper West Side) and 10016 (Murray Hill) also experienced substantial increases.</span>
+<span id="cb12-272"><a href="#cb12-272"></a></span>
+<span id="cb12-273"><a href="#cb12-273"></a>This spike in remote work raises a key hypothesis: ZIP codes with high WFH growth may have seen slower subway recovery, a trend we’ll explore in the next sub-question.</span>
+<span id="cb12-274"><a href="#cb12-274"></a></span>
+<span id="cb12-275"><a href="#cb12-275"></a><span class="fu">### 🚇 Sub-Question 2</span></span>
+<span id="cb12-276"><a href="#cb12-276"></a></span>
+<span id="cb12-277"><a href="#cb12-277"></a>**How did subway ridership recover in ZIP codes with the highest remote work adoption?**</span>
+<span id="cb12-278"><a href="#cb12-278"></a></span>
+<span id="cb12-279"><a href="#cb12-279"></a>Next, we focus on the transit recovery patterns in those high-WFH ZIPs. By tracking annual ridership totals from 2020 to 2023, we assess whether increased remote work delayed or dampened the rebound in subway usage.</span>
+<span id="cb12-280"><a href="#cb12-280"></a></span>
+<span id="cb12-281"><a href="#cb12-281"></a><span class="fu">#### 📊 Visualization</span></span>
+<span id="cb12-282"><a href="#cb12-282"></a></span>
+<span id="cb12-285"><a href="#cb12-285"></a><span class="in">```{r}</span></span>
+<span id="cb12-286"><a href="#cb12-286"></a><span class="co"># STEP 1: Reshape subway data into long format</span></span>
+<span id="cb12-287"><a href="#cb12-287"></a>subway_long <span class="ot">&lt;-</span> subway_all_cleaned <span class="sc">%&gt;%</span></span>
+<span id="cb12-288"><a href="#cb12-288"></a>  <span class="fu">select</span>(station, zip, x2020, x2021, x2022, x2023) <span class="sc">%&gt;%</span></span>
+<span id="cb12-289"><a href="#cb12-289"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb12-290"><a href="#cb12-290"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"x20"</span>),</span>
+<span id="cb12-291"><a href="#cb12-291"></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb12-292"><a href="#cb12-292"></a>    <span class="at">names_prefix =</span> <span class="st">"x"</span>,</span>
+<span id="cb12-293"><a href="#cb12-293"></a>    <span class="at">values_to =</span> <span class="st">"annual_ridership"</span></span>
+<span id="cb12-294"><a href="#cb12-294"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb12-295"><a href="#cb12-295"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb12-296"><a href="#cb12-296"></a>    <span class="at">year =</span> <span class="fu">as.integer</span>(year),</span>
+<span id="cb12-297"><a href="#cb12-297"></a>    <span class="at">zip =</span> stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="fu">as.character</span>(zip), <span class="dv">5</span>, <span class="at">pad =</span> <span class="st">"0"</span>)</span>
+<span id="cb12-298"><a href="#cb12-298"></a>  )</span>
+<span id="cb12-299"><a href="#cb12-299"></a></span>
+<span id="cb12-300"><a href="#cb12-300"></a><span class="co"># STEP 2: Load or use high-WFH ZIPs from your analysis</span></span>
+<span id="cb12-301"><a href="#cb12-301"></a><span class="co"># (These ZIPs had the largest increase in remote work from 2020 to 2023)</span></span>
+<span id="cb12-302"><a href="#cb12-302"></a>high_wfh_zips <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"11215"</span>, <span class="st">"11201"</span>, <span class="st">"10023"</span>, <span class="st">"11238"</span>, <span class="st">"10016"</span>, </span>
+<span id="cb12-303"><a href="#cb12-303"></a>                   <span class="st">"11221"</span>, <span class="st">"11216"</span>, <span class="st">"11222"</span>, <span class="st">"11217"</span>, <span class="st">"10128"</span>)</span>
+<span id="cb12-304"><a href="#cb12-304"></a></span>
+<span id="cb12-305"><a href="#cb12-305"></a><span class="co"># STEP 3: Summarize annual ridership for high-WFH ZIPs</span></span>
+<span id="cb12-306"><a href="#cb12-306"></a>zip_year_ridership <span class="ot">&lt;-</span> subway_long <span class="sc">%&gt;%</span></span>
+<span id="cb12-307"><a href="#cb12-307"></a>  <span class="fu">filter</span>(zip <span class="sc">%in%</span> high_wfh_zips) <span class="sc">%&gt;%</span></span>
+<span id="cb12-308"><a href="#cb12-308"></a>  <span class="fu">group_by</span>(zip, year) <span class="sc">%&gt;%</span></span>
+<span id="cb12-309"><a href="#cb12-309"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb12-310"><a href="#cb12-310"></a>    <span class="at">total_ridership =</span> <span class="fu">sum</span>(annual_ridership, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb12-311"><a href="#cb12-311"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb12-312"><a href="#cb12-312"></a>  )</span>
+<span id="cb12-313"><a href="#cb12-313"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb12-314"><a href="#cb12-314"></a><span class="co"># STEP 4: Plot heatmap with consistent style</span></span>
+<span id="cb12-315"><a href="#cb12-315"></a>heatmap_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(zip_year_ridership, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(year), <span class="at">y =</span> <span class="fu">fct_reorder</span>(zip, <span class="sc">-</span>total_ridership), <span class="at">fill =</span> total_ridership)) <span class="sc">+</span></span>
+<span id="cb12-316"><a href="#cb12-316"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb12-317"><a href="#cb12-317"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"plasma"</span>, <span class="at">name =</span> <span class="st">"Ridership"</span>, <span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span></span>
+<span id="cb12-318"><a href="#cb12-318"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-319"><a href="#cb12-319"></a>    <span class="at">title =</span> <span class="st">"🗺 Subway Ridership Heatmap (2020–2023)"</span>,</span>
+<span id="cb12-320"><a href="#cb12-320"></a>    <span class="at">subtitle =</span> <span class="st">"Hover to view ZIP-wise ridership trends"</span>,</span>
+<span id="cb12-321"><a href="#cb12-321"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb12-322"><a href="#cb12-322"></a>    <span class="at">y =</span> <span class="st">"ZIP Code"</span></span>
+<span id="cb12-323"><a href="#cb12-323"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-324"><a href="#cb12-324"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span>
+<span id="cb12-325"><a href="#cb12-325"></a></span>
+<span id="cb12-326"><a href="#cb12-326"></a><span class="co"># Make interactive</span></span>
+<span id="cb12-327"><a href="#cb12-327"></a><span class="fu">ggplotly</span>(heatmap_plot)</span>
+<span id="cb12-328"><a href="#cb12-328"></a></span>
+<span id="cb12-329"><a href="#cb12-329"></a><span class="in">```</span></span>
+<span id="cb12-330"><a href="#cb12-330"></a></span>
+<span id="cb12-331"><a href="#cb12-331"></a><span class="fu">#### 📊 Interpretation &amp; Takeaways</span></span>
+<span id="cb12-332"><a href="#cb12-332"></a></span>
+<span id="cb12-333"><a href="#cb12-333"></a>The heatmap above visualizes annual subway ridership trends across the ten busiest ZIP codes in New York City from 2020 to 2023. Each tile’s color intensity represents the total ridership volume for a given ZIP code and year — with warmer tones (yellows and oranges) indicating higher ridership and cooler tones (dark purples) indicating lower ridership.</span>
+<span id="cb12-334"><a href="#cb12-334"></a></span>
+<span id="cb12-335"><a href="#cb12-335"></a><span class="ss">-   </span>Consistent leaders: ZIP codes like 10035 (East Harlem) and 10007 (Lower Manhattan) stand out with consistently high ridership levels across all years, despite the pandemic-induced drop.</span>
+<span id="cb12-336"><a href="#cb12-336"></a></span>
+<span id="cb12-337"><a href="#cb12-337"></a><span class="ss">-   </span>Steady decline post-2020: Most ZIP codes show a gradual decrease in ridership from 2020 to 2023, reflecting NYC's sluggish recovery in transit usage following the rise of remote work.</span>
+<span id="cb12-338"><a href="#cb12-338"></a></span>
+<span id="cb12-339"><a href="#cb12-339"></a><span class="ss">-   </span>Lower-traffic ZIPs: Several ZIP codes (e.g., 10001, 10002, 10004) exhibit significantly lower ridership values, potentially due to reduced office density or slower economic rebound in those neighborhoods.</span>
+<span id="cb12-340"><a href="#cb12-340"></a></span>
+<span id="cb12-341"><a href="#cb12-341"></a><span class="fu">### 📍 Sub-Question 3</span></span>
+<span id="cb12-342"><a href="#cb12-342"></a></span>
+<span id="cb12-343"><a href="#cb12-343"></a>**Is there a negative correlation between remote work growth and transit ridership recovery across ZIP codes?**</span>
+<span id="cb12-344"><a href="#cb12-344"></a></span>
+<span id="cb12-345"><a href="#cb12-345"></a>To test our hypothesis more broadly, we calculate correlation coefficients between remote work growth and ridership recovery. Do ZIPs with higher WFH growth generally show weaker subway recovery? This analysis reveals city-wide trends.</span>
+<span id="cb12-346"><a href="#cb12-346"></a></span>
+<span id="cb12-347"><a href="#cb12-347"></a><span class="fu">#### 📊 Visualization</span></span>
+<span id="cb12-348"><a href="#cb12-348"></a></span>
+<span id="cb12-351"><a href="#cb12-351"></a><span class="in">```{r}</span></span>
+<span id="cb12-352"><a href="#cb12-352"></a>zip_recovery_all_years <span class="ot">&lt;-</span> subway_long <span class="sc">%&gt;%</span></span>
+<span id="cb12-353"><a href="#cb12-353"></a>  <span class="fu">group_by</span>(zip) <span class="sc">%&gt;%</span></span>
+<span id="cb12-354"><a href="#cb12-354"></a>  <span class="fu">mutate</span>(<span class="at">recovery_index =</span> annual_ridership <span class="sc">/</span> annual_ridership[year <span class="sc">==</span> <span class="dv">2020</span>]) <span class="sc">%&gt;%</span></span>
+<span id="cb12-355"><a href="#cb12-355"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb12-356"><a href="#cb12-356"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(recovery_index) <span class="sc">&amp;</span> <span class="fu">is.finite</span>(recovery_index))</span>
+<span id="cb12-357"><a href="#cb12-357"></a></span>
+<span id="cb12-358"><a href="#cb12-358"></a><span class="co"># Ensure ZIP formatting</span></span>
+<span id="cb12-359"><a href="#cb12-359"></a>wfh_combined <span class="ot">&lt;-</span> wfh_combined <span class="sc">%&gt;%</span></span>
+<span id="cb12-360"><a href="#cb12-360"></a>  <span class="fu">mutate</span>(<span class="at">zip =</span> stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="fu">as.character</span>(zip), <span class="dv">5</span>, <span class="at">pad =</span> <span class="st">"0"</span>))</span>
+<span id="cb12-361"><a href="#cb12-361"></a></span>
+<span id="cb12-362"><a href="#cb12-362"></a>zip_recovery_all_years <span class="ot">&lt;-</span> zip_recovery_all_years <span class="sc">%&gt;%</span></span>
+<span id="cb12-363"><a href="#cb12-363"></a>  <span class="fu">mutate</span>(<span class="at">zip =</span> stringr<span class="sc">::</span><span class="fu">str_pad</span>(zip, <span class="dv">5</span>, <span class="at">pad =</span> <span class="st">"0"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-364"><a href="#cb12-364"></a>  <span class="fu">left_join</span>(wfh_combined, <span class="at">by =</span> <span class="st">"zip"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-365"><a href="#cb12-365"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(wfh_change))</span>
+<span id="cb12-366"><a href="#cb12-366"></a></span>
+<span id="cb12-367"><a href="#cb12-367"></a><span class="co"># Bin WFH into quantile-based categories</span></span>
+<span id="cb12-368"><a href="#cb12-368"></a>zip_binned <span class="ot">&lt;-</span> zip_recovery_all_years <span class="sc">%&gt;%</span></span>
+<span id="cb12-369"><a href="#cb12-369"></a>  <span class="fu">mutate</span>(<span class="at">wfh_group =</span> <span class="fu">ntile</span>(wfh_change, <span class="dv">3</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-370"><a href="#cb12-370"></a>  <span class="fu">mutate</span>(<span class="at">wfh_group =</span> <span class="fu">factor</span>(wfh_group, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Low WFH"</span>, <span class="st">"Medium WFH"</span>, <span class="st">"High     WFH"</span>)))</span>
+<span id="cb12-371"><a href="#cb12-371"></a></span>
+<span id="cb12-372"><a href="#cb12-372"></a><span class="co"># Prep: calculate average recovery index per group/year</span></span>
+<span id="cb12-373"><a href="#cb12-373"></a>recovery_trends <span class="ot">&lt;-</span> zip_binned <span class="sc">%&gt;%</span></span>
+<span id="cb12-374"><a href="#cb12-374"></a>  <span class="fu">group_by</span>(wfh_group, year) <span class="sc">%&gt;%</span></span>
+<span id="cb12-375"><a href="#cb12-375"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb12-376"><a href="#cb12-376"></a>    <span class="at">avg_recovery =</span> <span class="fu">mean</span>(recovery_index, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb12-377"><a href="#cb12-377"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb12-378"><a href="#cb12-378"></a>  )</span>
+<span id="cb12-379"><a href="#cb12-379"></a></span>
+<span id="cb12-380"><a href="#cb12-380"></a><span class="co"># Plot: Line chart with shaded area</span></span>
+<span id="cb12-381"><a href="#cb12-381"></a><span class="fu">ggplot</span>(recovery_trends, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> avg_recovery, <span class="at">color =</span> wfh_group, <span class="at">fill =</span>    wfh_group)) <span class="sc">+</span></span>
+<span id="cb12-382"><a href="#cb12-382"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb12-383"><a href="#cb12-383"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb12-384"><a href="#cb12-384"></a>  <span class="fu">geom_area</span>(<span class="at">alpha =</span> <span class="fl">0.15</span>, <span class="at">position =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb12-385"><a href="#cb12-385"></a>  <span class="fu">scale_color_viridis_d</span>(<span class="at">option =</span> <span class="st">"D"</span>, <span class="at">begin =</span> <span class="fl">0.2</span>, <span class="at">end =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb12-386"><a href="#cb12-386"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">"D"</span>, <span class="at">begin =</span> <span class="fl">0.2</span>, <span class="at">end =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb12-387"><a href="#cb12-387"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">accuracy =</span> <span class="dv">1</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,    <span class="cn">NA</span>)) <span class="sc">+</span></span>
+<span id="cb12-388"><a href="#cb12-388"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-389"><a href="#cb12-389"></a>    <span class="at">title =</span> <span class="st">"📈 Subway Ridership Recovery (2020–2023)"</span>,</span>
+<span id="cb12-390"><a href="#cb12-390"></a>    <span class="at">subtitle =</span> <span class="st">"Average recovery index by WFH group (2020 baseline = 100%)"</span>,</span>
+<span id="cb12-391"><a href="#cb12-391"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb12-392"><a href="#cb12-392"></a>    <span class="at">y =</span> <span class="st">"Recovery Index"</span>,</span>
+<span id="cb12-393"><a href="#cb12-393"></a>    <span class="at">color =</span> <span class="st">"WFH Group"</span>,</span>
+<span id="cb12-394"><a href="#cb12-394"></a>    <span class="at">fill =</span> <span class="st">"WFH Group"</span></span>
+<span id="cb12-395"><a href="#cb12-395"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-396"><a href="#cb12-396"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">+</span></span>
+<span id="cb12-397"><a href="#cb12-397"></a>  <span class="fu">theme</span>(</span>
+<span id="cb12-398"><a href="#cb12-398"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb12-399"><a href="#cb12-399"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb12-400"><a href="#cb12-400"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb12-401"><a href="#cb12-401"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb12-402"><a href="#cb12-402"></a>  )</span>
+<span id="cb12-403"><a href="#cb12-403"></a><span class="in">```</span></span>
+<span id="cb12-404"><a href="#cb12-404"></a></span>
+<span id="cb12-405"><a href="#cb12-405"></a><span class="fu">#### 📊 Interpretation &amp; Takeaways</span></span>
+<span id="cb12-406"><a href="#cb12-406"></a></span>
+<span id="cb12-407"><a href="#cb12-407"></a>This line plot shows average subway ridership recovery across ZIP code groups with different levels of remote work growth between 2020 and 2023. ZIPs are divided into Low, Medium, and High WFH tiers, and the recovery index is tracked annually.</span>
+<span id="cb12-408"><a href="#cb12-408"></a></span>
+<span id="cb12-409"><a href="#cb12-409"></a><span class="ss">-  </span>Across all years, ZIPs with higher remote work growth consistently show lower average subway recovery, especially by 2023.</span>
+<span id="cb12-410"><a href="#cb12-410"></a></span>
+<span id="cb12-411"><a href="#cb12-411"></a><span class="ss">-  </span>In 2021, Medium-WFH areas rebounded quickly, likely due to more hybrid or in-person work. But by 2023, Low-WFH ZIPs pulled ahead with the strongest recovery, while High-WFH ZIPs remained far below baseline.</span>
+<span id="cb12-412"><a href="#cb12-412"></a></span>
+<span id="cb12-413"><a href="#cb12-413"></a>This supports a directional trend: ZIP codes with higher WFH growth tend to recover more slowly in terms of subway usage, reinforcing the long-term impact of remote work on transit behavior.</span>
+<span id="cb12-414"><a href="#cb12-414"></a></span>
+<span id="cb12-415"><a href="#cb12-415"></a></span>
+<span id="cb12-416"><a href="#cb12-416"></a><span class="fu">### 🚇 Sub-Question 4</span></span>
+<span id="cb12-417"><a href="#cb12-417"></a></span>
+<span id="cb12-418"><a href="#cb12-418"></a>**Did boroughs with lower remote work shifts see stronger subway recovery?**</span>
+<span id="cb12-419"><a href="#cb12-419"></a></span>
+<span id="cb12-420"><a href="#cb12-420"></a>Finally, we zoom out to the borough level. By aggregating recovery trends and WFH changes, we assess whether outer boroughs — traditionally more transit-reliant — bounced back faster than Manhattan, the WFH capital.</span>
+<span id="cb12-421"><a href="#cb12-421"></a></span>
+<span id="cb12-422"><a href="#cb12-422"></a><span class="fu">#### 📊 Visualization</span></span>
+<span id="cb12-423"><a href="#cb12-423"></a></span>
+<span id="cb12-426"><a href="#cb12-426"></a><span class="in">```{r}</span></span>
+<span id="cb12-427"><a href="#cb12-427"></a><span class="co"># Start with subway data and keep one row per ZIP-borough combo</span></span>
+<span id="cb12-428"><a href="#cb12-428"></a>  zip_boro_crosswalk <span class="ot">&lt;-</span> subway_all_cleaned <span class="sc">%&gt;%</span></span>
+<span id="cb12-429"><a href="#cb12-429"></a>    <span class="fu">distinct</span>(zip, boro) <span class="sc">%&gt;%</span></span>
+<span id="cb12-430"><a href="#cb12-430"></a>    <span class="fu">mutate</span>(<span class="at">zip =</span> stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="fu">as.character</span>(zip), <span class="dv">5</span>, <span class="at">pad =</span> <span class="st">"0"</span>))</span>
+<span id="cb12-431"><a href="#cb12-431"></a>  </span>
+<span id="cb12-432"><a href="#cb12-432"></a>  <span class="co"># Join borough info to remote work data</span></span>
+<span id="cb12-433"><a href="#cb12-433"></a>  wfh_boro <span class="ot">&lt;-</span> wfh_combined <span class="sc">%&gt;%</span></span>
+<span id="cb12-434"><a href="#cb12-434"></a>    <span class="fu">mutate</span>(<span class="at">zip =</span> stringr<span class="sc">::</span><span class="fu">str_pad</span>(zip, <span class="dv">5</span>, <span class="at">pad =</span> <span class="st">"0"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-435"><a href="#cb12-435"></a>    <span class="fu">left_join</span>(zip_boro_crosswalk, <span class="at">by =</span> <span class="st">"zip"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-436"><a href="#cb12-436"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(boro))</span>
+<span id="cb12-437"><a href="#cb12-437"></a>  </span>
+<span id="cb12-438"><a href="#cb12-438"></a>  boro_wfh <span class="ot">&lt;-</span> wfh_boro <span class="sc">%&gt;%</span></span>
+<span id="cb12-439"><a href="#cb12-439"></a>    <span class="fu">group_by</span>(boro) <span class="sc">%&gt;%</span></span>
+<span id="cb12-440"><a href="#cb12-440"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb12-441"><a href="#cb12-441"></a>      <span class="at">avg_wfh_change =</span> <span class="fu">mean</span>(wfh_change, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb12-442"><a href="#cb12-442"></a>      <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb12-443"><a href="#cb12-443"></a>    )</span>
+<span id="cb12-444"><a href="#cb12-444"></a>  </span>
+<span id="cb12-445"><a href="#cb12-445"></a>  boro_recovery <span class="ot">&lt;-</span> subway_all_cleaned <span class="sc">%&gt;%</span></span>
+<span id="cb12-446"><a href="#cb12-446"></a>    <span class="fu">select</span>(boro, zip, x2020, x2021, x2022, x2023) <span class="sc">%&gt;%</span></span>
+<span id="cb12-447"><a href="#cb12-447"></a>    <span class="fu">pivot_longer</span>(</span>
+<span id="cb12-448"><a href="#cb12-448"></a>      <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"x20"</span>),</span>
+<span id="cb12-449"><a href="#cb12-449"></a>      <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb12-450"><a href="#cb12-450"></a>      <span class="at">names_prefix =</span> <span class="st">"x"</span>,</span>
+<span id="cb12-451"><a href="#cb12-451"></a>      <span class="at">values_to =</span> <span class="st">"annual_ridership"</span></span>
+<span id="cb12-452"><a href="#cb12-452"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb12-453"><a href="#cb12-453"></a>    <span class="fu">group_by</span>(boro, year) <span class="sc">%&gt;%</span></span>
+<span id="cb12-454"><a href="#cb12-454"></a>    <span class="fu">summarise</span>(<span class="at">total_ridership =</span> <span class="fu">sum</span>(annual_ridership, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span>         <span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-455"><a href="#cb12-455"></a>    <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, <span class="at">values_from =</span> total_ridership) <span class="sc">%&gt;%</span></span>
+<span id="cb12-456"><a href="#cb12-456"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb12-457"><a href="#cb12-457"></a>      <span class="at">recovery_2023 =</span> <span class="st">`</span><span class="at">2023</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">2020</span><span class="st">`</span>,</span>
+<span id="cb12-458"><a href="#cb12-458"></a>      <span class="at">recovery_2022 =</span> <span class="st">`</span><span class="at">2022</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">2020</span><span class="st">`</span>,</span>
+<span id="cb12-459"><a href="#cb12-459"></a>      <span class="at">recovery_2021 =</span> <span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">2020</span><span class="st">`</span></span>
+<span id="cb12-460"><a href="#cb12-460"></a>    )</span>
+<span id="cb12-461"><a href="#cb12-461"></a>  </span>
+<span id="cb12-462"><a href="#cb12-462"></a>  </span>
+<span id="cb12-463"><a href="#cb12-463"></a>  boro_combined <span class="ot">&lt;-</span> boro_recovery <span class="sc">%&gt;%</span></span>
+<span id="cb12-464"><a href="#cb12-464"></a>    <span class="fu">left_join</span>(boro_wfh, <span class="at">by =</span> <span class="st">"boro"</span>)</span>
+<span id="cb12-465"><a href="#cb12-465"></a></span>
+<span id="cb12-466"><a href="#cb12-466"></a><span class="co"># Reshape for slope chart</span></span>
+<span id="cb12-467"><a href="#cb12-467"></a>boro_long <span class="ot">&lt;-</span> boro_combined <span class="sc">%&gt;%</span></span>
+<span id="cb12-468"><a href="#cb12-468"></a>  <span class="fu">select</span>(boro, recovery_2021, recovery_2022, recovery_2023, avg_wfh_change) <span class="sc">%&gt;%</span></span>
+<span id="cb12-469"><a href="#cb12-469"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb12-470"><a href="#cb12-470"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"recovery_"</span>),</span>
+<span id="cb12-471"><a href="#cb12-471"></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb12-472"><a href="#cb12-472"></a>    <span class="at">names_prefix =</span> <span class="st">"recovery_"</span>,</span>
+<span id="cb12-473"><a href="#cb12-473"></a>    <span class="at">values_to =</span> <span class="st">"recovery"</span></span>
+<span id="cb12-474"><a href="#cb12-474"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb12-475"><a href="#cb12-475"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.integer</span>(year))</span>
+<span id="cb12-476"><a href="#cb12-476"></a></span>
+<span id="cb12-477"><a href="#cb12-477"></a><span class="co"># Plot with direct labels</span></span>
+<span id="cb12-478"><a href="#cb12-478"></a><span class="co"># Step: Create tidy bar chart data</span></span>
+<span id="cb12-479"><a href="#cb12-479"></a>boro_bar <span class="ot">&lt;-</span> boro_combined <span class="sc">%&gt;%</span></span>
+<span id="cb12-480"><a href="#cb12-480"></a>  <span class="fu">select</span>(boro, recovery_2021, recovery_2022, recovery_2023) <span class="sc">%&gt;%</span></span>
+<span id="cb12-481"><a href="#cb12-481"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb12-482"><a href="#cb12-482"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"recovery_"</span>),</span>
+<span id="cb12-483"><a href="#cb12-483"></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb12-484"><a href="#cb12-484"></a>    <span class="at">names_prefix =</span> <span class="st">"recovery_"</span>,</span>
+<span id="cb12-485"><a href="#cb12-485"></a>    <span class="at">values_to =</span> <span class="st">"recovery"</span></span>
+<span id="cb12-486"><a href="#cb12-486"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb12-487"><a href="#cb12-487"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.integer</span>(year))</span>
+<span id="cb12-488"><a href="#cb12-488"></a>boro_bar_clean <span class="ot">&lt;-</span> boro_bar <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(boro))</span>
+<span id="cb12-489"><a href="#cb12-489"></a></span>
+<span id="cb12-490"><a href="#cb12-490"></a></span>
+<span id="cb12-491"><a href="#cb12-491"></a><span class="fu">ggplot</span>(boro_bar_clean, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(year), <span class="at">y =</span> recovery, <span class="at">fill =</span> boro)) <span class="sc">+</span></span>
+<span id="cb12-492"><a href="#cb12-492"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.75</span>), <span class="at">width =</span> <span class="fl">0.6</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb12-493"><a href="#cb12-493"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb12-494"><a href="#cb12-494"></a>    <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(recovery <span class="sc">*</span> <span class="dv">100</span>), <span class="st">"%"</span>)),</span>
+<span id="cb12-495"><a href="#cb12-495"></a>    <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.75</span>),</span>
+<span id="cb12-496"><a href="#cb12-496"></a>    <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>,</span>
+<span id="cb12-497"><a href="#cb12-497"></a>    <span class="at">size =</span> <span class="fl">4.5</span>,</span>
+<span id="cb12-498"><a href="#cb12-498"></a>    <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
+<span id="cb12-499"><a href="#cb12-499"></a>    <span class="at">color =</span> <span class="st">"black"</span></span>
+<span id="cb12-500"><a href="#cb12-500"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-501"><a href="#cb12-501"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span></span>
+<span id="cb12-502"><a href="#cb12-502"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb12-503"><a href="#cb12-503"></a>    <span class="at">labels =</span> <span class="fu">percent_format</span>(<span class="at">accuracy =</span> <span class="dv">1</span>),</span>
+<span id="cb12-504"><a href="#cb12-504"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.2</span>),</span>
+<span id="cb12-505"><a href="#cb12-505"></a>    <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.1</span>))</span>
+<span id="cb12-506"><a href="#cb12-506"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-507"><a href="#cb12-507"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-508"><a href="#cb12-508"></a>    <span class="at">title =</span> <span class="st">"🚇 Borough-Level Subway Ridership Recovery</span><span class="sc">\n</span><span class="st">(2021–2023)"</span>,</span>
+<span id="cb12-509"><a href="#cb12-509"></a>    <span class="at">subtitle =</span> <span class="st">"Compared to 2020 baseline (100%) — grouped by year and borough"</span>,</span>
+<span id="cb12-510"><a href="#cb12-510"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb12-511"><a href="#cb12-511"></a>    <span class="at">y =</span> <span class="st">"Recovery (%)"</span>,</span>
+<span id="cb12-512"><a href="#cb12-512"></a>    <span class="at">fill =</span> <span class="st">"Borough"</span></span>
+<span id="cb12-513"><a href="#cb12-513"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-514"><a href="#cb12-514"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">+</span></span>
+<span id="cb12-515"><a href="#cb12-515"></a>  <span class="fu">theme</span>(</span>
+<span id="cb12-516"><a href="#cb12-516"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">18</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb12-517"><a href="#cb12-517"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">13</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb12-518"><a href="#cb12-518"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb12-519"><a href="#cb12-519"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">13</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb12-520"><a href="#cb12-520"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb12-521"><a href="#cb12-521"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb12-522"><a href="#cb12-522"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb12-523"><a href="#cb12-523"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb12-524"><a href="#cb12-524"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb12-525"><a href="#cb12-525"></a>  )</span>
+<span id="cb12-526"><a href="#cb12-526"></a></span>
+<span id="cb12-527"><a href="#cb12-527"></a><span class="in">```</span></span>
+<span id="cb12-528"><a href="#cb12-528"></a></span>
+<span id="cb12-529"><a href="#cb12-529"></a><span class="fu">#### 📊 Interpretation &amp; Takeaways</span></span>
+<span id="cb12-530"><a href="#cb12-530"></a></span>
+<span id="cb12-531"><a href="#cb12-531"></a>This grouped bar chart shows subway ridership recovery by borough from 2021 to 2023, benchmarked against 2020 levels.</span>
+<span id="cb12-532"><a href="#cb12-532"></a></span>
+<span id="cb12-533"><a href="#cb12-533"></a><span class="ss">- </span>🚇 In 2021, outer boroughs like The Bronx and Queens showed the strongest rebound, reaching over 85–90% of their pre-pandemic ridership.</span>
+<span id="cb12-534"><a href="#cb12-534"></a></span>
+<span id="cb12-535"><a href="#cb12-535"></a><span class="ss">- </span>⬇️ By 2023, however, all boroughs saw noticeable drops, with ridership stabilizing around 32–48%, suggesting that initial recovery wasn’t sustained.</span>
+<span id="cb12-536"><a href="#cb12-536"></a></span>
+<span id="cb12-537"><a href="#cb12-537"></a><span class="ss">- </span>🏙️ Manhattan maintained relatively steadier recovery rates over time, likely due to its concentration of hybrid/remote jobs.</span>
+<span id="cb12-538"><a href="#cb12-538"></a></span>
+<span id="cb12-539"><a href="#cb12-539"></a><span class="ss">- </span>🚫 Staten Island is not shown, as it is served by the Staten Island Railway, which is reported separately.</span>
+<span id="cb12-540"><a href="#cb12-540"></a></span>
+<span id="cb12-541"><a href="#cb12-541"></a>These trends suggest that boroughs with lower WFH growth rebounded faster early on, but long-term ridership recovery remains uneven. Employment type and transit reliance appear to play major roles in borough-level variation.</span>
+<span id="cb12-542"><a href="#cb12-542"></a></span>
+<span id="cb12-543"><a href="#cb12-543"></a></span>
+<span id="cb12-544"><a href="#cb12-544"></a><span class="fu">### Conclusion ✅</span></span>
+<span id="cb12-545"><a href="#cb12-545"></a></span>
+<span id="cb12-546"><a href="#cb12-546"></a>This project traced the evolving relationship between remote work and subway ridership in New York City from 2020 to 2023 a period marked by disruption, adaptation, and uneven recovery.</span>
+<span id="cb12-547"><a href="#cb12-547"></a></span>
+<span id="cb12-548"><a href="#cb12-548"></a><span class="fu">### 🚦 Connecting the Dots: From Sub-Questions to the Bigger Picture</span></span>
+<span id="cb12-549"><a href="#cb12-549"></a></span>
+<span id="cb12-550"><a href="#cb12-550"></a>By systematically exploring each of the four sub-questions, we were able to meaningfully address our central motivating question:</span>
+<span id="cb12-551"><a href="#cb12-551"></a></span>
+<span id="cb12-552"><a href="#cb12-552"></a>**“How has the rise of remote work since the COVID-19 pandemic impacted New York City subway ridership and transit system dynamics?”**</span>
+<span id="cb12-553"><a href="#cb12-553"></a></span>
+<span id="cb12-554"><a href="#cb12-554"></a>Our analysis revealed that ZIP codes with higher remote work growth tended to experience slower subway ridership recovery, especially in central business districts like Manhattan. Conversely, neighborhoods with lower WFH adoption saw comparatively stronger rebounds. We also observed borough-level disparities and shifts in commuting patterns across years.</span>
+<span id="cb12-555"><a href="#cb12-555"></a></span>
+<span id="cb12-556"><a href="#cb12-556"></a>These findings suggest that remote work has not just temporarily reduced subway usage—it has reshaped urban mobility in lasting ways. The sub-questions allowed us to deconstruct this complex issue and build toward a data-driven understanding of NYC’s evolving transit landscape in the remote work era.</span>
+<span id="cb12-557"><a href="#cb12-557"></a></span>
+<span id="cb12-558"><a href="#cb12-558"></a><span class="fu">### 📌 Key Findings</span></span>
+<span id="cb12-559"><a href="#cb12-559"></a></span>
+<span id="cb12-560"><a href="#cb12-560"></a><span class="ss">-   </span>📉 ZIP codes with the largest increases in remote work like 11215 and 11201 showed the slowest subway ridership recovery, especially in central areas like Manhattan.</span>
+<span id="cb12-561"><a href="#cb12-561"></a></span>
+<span id="cb12-562"><a href="#cb12-562"></a><span class="ss">-   </span>📈 Outer boroughs such as The Bronx and Queens, with lower WFH growth, showed stronger recovery likely due to more essential and in-person workforces.</span>
+<span id="cb12-563"><a href="#cb12-563"></a></span>
+<span id="cb12-564"><a href="#cb12-564"></a><span class="ss">-   </span>🔄 The link between remote work and transit recovery is directional but not consistent; recovery levels varied by year and location, suggesting that other factors (like income, job type, or transit service changes) also influence ridership trends.</span>
+<span id="cb12-565"><a href="#cb12-565"></a></span>
+<span id="cb12-566"><a href="#cb12-566"></a><span class="fu">### 🔮 Future Directions</span></span>
+<span id="cb12-567"><a href="#cb12-567"></a></span>
+<span id="cb12-568"><a href="#cb12-568"></a><span class="ss">-  </span>Include MTA bus and Staten Island Railway data for a more complete view.</span>
+<span id="cb12-569"><a href="#cb12-569"></a></span>
+<span id="cb12-570"><a href="#cb12-570"></a><span class="ss">-  </span>Analyze income, occupation, or fare type to refine understanding of   ridership changes.</span>
+<span id="cb12-571"><a href="#cb12-571"></a></span>
+<span id="cb12-572"><a href="#cb12-572"></a><span class="ss">-  </span>Compare NYC to other major metro areas like Chicago or DC.</span>
+<span id="cb12-573"><a href="#cb12-573"></a></span>
+<span id="cb12-574"><a href="#cb12-574"></a><span class="ss">-  </span>Build a predictive model for ridership based on remote work trends.</span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

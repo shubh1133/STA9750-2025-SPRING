@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "STA 9750 Submission Material"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: Mp01.qmd
+        text: Payroll
+      - href: mp02.qmd
+        text: Transit Awards
+      - href: mp03.qmd
+        text: Midnight Ascension Playlist
+      - href: mp04.qmd
+        text: 2024 Election County Shift Analysis
+      
+
+format:
+  html:
+    toc: true

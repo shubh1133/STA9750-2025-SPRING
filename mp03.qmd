@@ -1,0 +1,846 @@
+---
+title: "Mini-Project #03: Creating the Ultimate Playlist"
+author: "Shubh Goyal"
+date: today 
+format:
+  html:
+    theme: darkly
+    toc: true
+    number-sections: true
+    code-fold: true
+    page-layout: full
+    allow-html: true
+    smooth-scroll: true 
+execute:
+  echo: true  
+  eval: true 
+  warning: false
+  message: false
+---
+
+# 🎧 The Ultimate Playlist: *Midnight Ascension*🌙
+
+<img src="cover.png" width="500px" style="display: block; margin-left: auto; margin-right: auto;"/>
+
+> *"A journey through moody anthems, lyrical grit, and melodic elevation"*
+
+## 📜 Playlist Description
+
+**Midnight Ascension** blends rhythmic fire with introspective depth — a sonic ascent through high-energy bangers, smooth flows, and emotionally rich undercurrents. With Kendrick Lamar and Travis Scott as our North Stars, this playlist brings together underground gems and global hits that flow seamlessly from dusk till dawn.
+
+## 🎨 Design Principles
+
+-   **Anchor songs:** “HUMBLE.” by Kendrick Lamar and “Antidote” by Travis Scott.
+-   **Balance:** Energetic highs countered by smooth valleys.
+-   **Diversity:** A mix of popular and lesser-known songs.
+-   **Structure:** Carefully chosen using audio features (tempo, energy, danceability, valence, etc.).
+-   **Valence Similarity**: Songs sharing the same emotional “feel”.
+
+## 🎧 Why It’s the Ultimate Playlist
+
+I used data science to back every pick, not just vibes. This included examining: - How songs **co-occur on playlists** - **Key and tempo** for DJ transitions - Shared **energy & danceability** levels - **Artist overlap** and emotional tone (**valence**)
+
+### 📊 Statistical & Visualization Strategy
+
+-   used R and dplyr to calculate valence, tempo, key, and co-occurrence.
+
+-   Explored Spotify’s popularity and playlist frequency using correlation plots.
+
+-   Selected candidate songs using five filtering heuristics.
+
+-   Performed deduplication and ensured anchor songs were correct.
+
+-   Visualized playlist structure with ggplot2 to verify the flow
+
+# Data Acquisition and Data Preparation
+
+## 🔍 Task 1: Song Characteristics DataSet
+
+In this task, I loaded and cleaned the main Spotify track dataset containing song characteristics like tempo, danceability, energy, and popularity. I also cleaned the artists column to split multiple artists across rows.
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(readr)
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+clean_artist_string <- function(x){
+  x |>
+    str_replace_all("\\['", "") |>
+    str_replace_all("'\\]", "") |>
+    str_replace_all("[ ]?'", "") |>
+    str_replace_all("[ ]*,[ ]*", ",")
+}
+
+SONGS <- read_csv("data/mp03/data.csv") %>%
+  separate_longer_delim(artists, ",") %>%
+  mutate(artist_name = clean_artist_string(artists)) %>%
+  select(-artists)
+
+SONGS %>%
+  select(name, artist_name, popularity, danceability, energy, tempo) %>%
+  head(10) %>%
+  kable("html", caption = "🎶 Spotify Vibes: Song Characteristics Sample") %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 14
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%    # header Spotify green
+  row_spec(1:10, background = "#121212", color = "#EAEAEA")                # dark mode rows
+
+```
+
+## 🗂️ Task 2: Playlist DataSet
+
+I downloaded and loaded 1000 Spotify playlist JSON files from a GitHub mirror.
+
+```{r}
+library(knitr)
+library(kableExtra)
+
+load_playlists <- function(){
+  files <- list.files("data/mp03/playlists", full.names = TRUE)
+  playlists <- map(files, ~jsonlite::read_json(.x, simplifyVector = TRUE)$playlists)
+  return(playlists)
+}
+
+# Efficient approach using pre-saved playlist RDS
+all_playlists <- readRDS("data/mp03/playlist_data_cleaned.rds")
+
+all_playlists %>%
+  select(artist_name, playlist_id, playlist_name, track_name, track_id) %>%
+  head(10) %>%
+  kable("html", escape = FALSE, caption = "🎧 Sample of Playlist Data (Top 10 Tracks)") %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 14,
+    bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%  # Spotify Green Header
+  row_spec(1:10, background = "#121212", color = "#EAEAEA")              # Dark rows with light text
+
+
+
+
+```
+
+## 📐 Task 3: Rectangle the Playlist Data
+
+Since the playlist data was nested, I had to flatten it to a tidy rectangular format.
+
+```{r}
+all_playlists %>%
+  select(playlist_name, playlist_id, playlist_followers, track_name, artist_name, duration) %>%
+  head(10) %>%
+  kable("html", escape = FALSE, caption = "🎵 Rectangular Playlist Data Sample") %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 14,
+    bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%
+  row_spec(1:10, background = "#121212", color = "#EAEAEA")    
+```
+
+## 🔍 Task 4: Initial Exploration
+
+I explored basic questions to understand our dataset:
+
+### 1. How many distinct tracks and artists are represented in the playlist data?
+
+```{r}
+n_distinct_tracks <-  all_playlists %>% distinct(track_id) %>% nrow()
+n_distinct_artists <- all_playlists %>% distinct(artist_id) %>% nrow()
+
+distinct_summary <- tibble(
+  Metric = c("🎵 Unique Tracks", "👤 Unique Artists"),
+  Count = c(n_distinct_tracks, n_distinct_artists)
+)
+
+distinct_summary %>%
+  kable("html", escape = FALSE, caption = "🎶 Unique Track and Artist Counts in Playlist Data") %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 14,
+    bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%
+  row_spec(1:2, background = "#121212", color = "#EAEAEA")
+
+```
+
+### 2. What are the 5 most popular tracks in the playlist data?
+
+```{r}
+top_tracks <- all_playlists %>%
+  count(track_name, sort = TRUE) %>%
+  slice_head(n = 5)
+top_tracks %>%
+  kable("html", escape = FALSE, caption = "🔥 Top 5 Most Popular Tracks in Playlist Data") %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 14,
+    bootstrap_options = c("striped", "hover", "condensed"),
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%
+  row_spec(1:5, background = "#121212", color = "#EAEAEA")
+
+
+
+```
+
+### 3. What is the most popular track in the playlist data that does not have a corresponding entry in the song characteristics data?
+
+```{r}
+track_data <- read.csv("data/mp03/data.csv")
+track_data <- track_data %>%
+  rename(track_id = id)
+
+
+anti_joined <- all_playlists %>%
+  anti_join(track_data, by = "track_id")
+
+most_popular_missing <- anti_joined %>%
+  count(track_name, sort = TRUE) %>%
+  slice_head(n = 1)
+
+most_popular_missing %>%
+  kable("html", escape = FALSE, caption = "❓ Most Popular Track Missing from Song Characteristics Data") %>%
+  kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped", "hover", "condensed"),
+    font_size = 14,
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%
+  row_spec(1:nrow(most_popular_missing), background = "#121212", color = "#EAEAEA")
+
+```
+
+### 4. What is the most “danceable” track? How often does it appear in a playlist?
+
+```{r}
+most_danceable <- track_data %>%
+  filter(!is.na(danceability)) %>%
+  slice_max(danceability, n = 1)
+
+track_id_dance <- most_danceable$track_id
+
+appearances <- all_playlists %>%
+  filter(track_id == track_id_dance) %>%
+  nrow()
+
+dance_table <- most_danceable %>%
+  select(track_name = name, danceability) %>%
+  mutate(playlist_appearances = appearances)
+
+dance_table %>%
+  kable("html", escape = FALSE, caption = "💃 Most Danceable Track and Playlist Appearances") %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 14,
+    bootstrap_options = c("striped", "hover", "condensed"),
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%
+  row_spec(1, background = "#121212", color = "#EAEAEA")
+
+```
+
+### 5. Which playlist has the longest average track length?
+
+```{r}
+all_playlists %>%
+  group_by(playlist_id, playlist_name) %>%
+  summarise(avg_duration = mean(duration, na.rm = TRUE), .groups = "drop") %>%
+  slice_max(avg_duration, n = 1) %>%
+  kable("html", escape = FALSE, caption = "⏱️ Playlist with Longest Average Track Length") %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 14,
+    bootstrap_options = c("striped", "hover", "condensed"),
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%
+  row_spec(1, background = "#121212", color = "#EAEAEA")
+
+```
+
+### 6. What is the most popular playlist on Spotify?
+
+```{r}
+all_playlists%>%
+  distinct(playlist_id, playlist_name, playlist_followers) %>%
+  slice_max(playlist_followers, n = 1)%>%
+  kable("html", escape = FALSE, caption = "🌟 Most Popular Playlist on Spotify") %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 14,
+    bootstrap_options = c("striped", "hover", "condensed"),
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%
+  row_spec(1, background = "#121212", color = "#EAEAEA")
+
+```
+
+## 📊 Task 5: Visually Identifying Characteristics of Popular Songs
+
+We used several visualizations to analyze trends in popularity, danceability, release years, and more.We defined a song as "popular" if its popularity score was **\>= 70**.
+
+### 1. Correlation between popularity and playlist appearances
+
+```{r}
+library(ggplot2)
+
+popularity_vs_playlists <- all_playlists %>%
+  inner_join(track_data, by = "track_id") %>%
+  count(track_id, popularity, name = "playlist_appearances")
+
+ggplot(popularity_vs_playlists, aes(x = playlist_appearances, y = popularity)) +
+  geom_point(alpha = 0.5, color = "#FF0000") +  # Spotify green dots
+  geom_smooth(method = "lm", color = "#FFDC00", linewidth = 1.2) +  # Yellow trend line
+  labs(
+    title = "🎧 Track Popularity vs. Playlist Appearances",
+    x = "Playlist Appearances",
+    y = "Spotify Popularity Score"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.background = element_rect(fill = "#121212", color = NA),
+    panel.background = element_rect(fill = "#121212", color = NA),
+    panel.grid.major = element_line(color = "#333333"),
+    panel.grid.minor = element_blank(),
+    axis.text = element_text(color = "#EAEAEA"),
+    axis.title = element_text(color = "#EAEAEA"),
+    plot.title = element_text(color = "#FF0000", face = "bold")
+  )
+
+```
+
+### 2. Year with Most Popular Songs
+
+```{r}
+popular_songs <- track_data %>%
+  filter(popularity >= 70)
+ggplot(popular_songs, aes(x = year)) +
+  geom_bar(fill = "#FF0000") +
+  labs(title = "📅 Release Years of Popular Songs (Popularity ≥ 70)",
+       x = "Year", y = "Count") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.background = element_rect(fill = "#121212", color = NA),
+    panel.background = element_rect(fill = "#121212", color = NA),
+    axis.text = element_text(color = "#EAEAEA"),
+    axis.title = element_text(color = "#EAEAEA"),
+    plot.title = element_text(color = "#FF0000", face = "bold")
+  )
+
+```
+
+### 3. When did Danceability peak?
+
+```{r}
+  # 📊 Average Danceability per Year
+
+danceability_trend <- track_data %>%
+  group_by(year) %>%
+  summarise(avg_danceability = mean(danceability, na.rm = TRUE)) %>%
+  filter(!is.na(year))  # remove NA years just in case
+
+# 🎨 Line chart with points
+ggplot(danceability_trend, aes(x = year, y = avg_danceability)) +
+  geom_line(color = "#FF0000", size = 1) +                        # 🔴 YouTube Red Line
+  geom_point(color = "#FFA500", size = 2) +                      # 🟠 Orange points
+  labs(
+    title = "💃 Average Danceability by Year",
+    x = "Year", y = "Avg Danceability"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.background = element_rect(fill = "#fdfdfd", color = NA),
+    panel.grid.major = element_line(color = "#e6e6e6"),
+    plot.title = element_text(face = "bold", color = "#111111"),
+    axis.title = element_text(color = "#333333"),
+    axis.text = element_text(color = "#222222")
+  )
+
+```
+
+### 4. Most Represented Decade
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+track_data %>%
+  mutate(decade = (year %/% 10) * 10) %>%
+  count(decade) %>%
+  ggplot(aes(x = as.factor(decade), y = n, group = 1)) +
+  geom_area(fill = "#FF4136", alpha = 0.7) +
+  geom_line(color = "#FF851B", size = 1) +
+  geom_point(color = "white", size = 2) +
+  labs(title = "📈 Growth of Tracks by Decade", x = "Decade", y = "Number of Tracks") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.background = element_rect(fill = "#121212", color = NA),
+    panel.background = element_rect(fill = "#121212", color = NA),
+    axis.text = element_text(color = "#EAEAEA"),
+    axis.title = element_text(color = "#CCCCCC"),
+    plot.title = element_text(color = "#FF851B", face = "bold")
+  )
+
+
+
+```
+
+### 5. Key Frequency
+
+```{r}
+track_data %>%
+  count(key) %>%
+  ggplot(aes(x = factor(key), y = n)) +
+  geom_bar(stat = "identity", fill = "#B10DC9") +
+  coord_polar(start = 0) +
+  labs(title = "🎼 Distribution of Musical Keys", x = "Key", y = "Frequency") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.background = element_rect(fill = "#121212", color = NA),
+    panel.background = element_rect(fill = "#121212", color = NA),
+    axis.text = element_text(color = "#EAEAEA"),
+    axis.title = element_text(color = "#EAEAEA"),
+    plot.title = element_text(color = "#B10DC9", face = "bold")
+  )
+
+```
+
+### 6. Most Popular Track Lengths
+
+```{r}
+ggplot(track_data, aes(x = duration_ms / 1000)) +
+  geom_histogram(binwidth = 10, fill = "#2ECC40") +
+  labs(title = "⏱️ Distribution of Track Lengths", x = "Duration (seconds)", y = "Number of Tracks") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.background = element_rect(fill = "#121212", color = NA),
+    panel.background = element_rect(fill = "#121212", color = NA),
+    axis.text = element_text(color = "#EAEAEA"),
+    axis.title = element_text(color = "#EAEAEA"),
+    plot.title = element_text(color = "#2ECC40", face = "bold")
+  )
+
+```
+
+### 7 a. Are explicit tracks more popular?
+
+```{r}
+  ggplot(track_data, aes(x = factor(explicit), y = popularity)) +
+  geom_boxplot(fill = "#FF4136") +
+  labs(title = "🛑 Popularity vs Explicit Content", x = "Explicit (0 = No, 1 = Yes)", y = "Popularity") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.background = element_rect(fill = "#121212", color = NA),
+    panel.background = element_rect(fill = "#121212", color = NA),
+    axis.text = element_text(color = "#EAEAEA"),
+    axis.title = element_text(color = "#EAEAEA"),
+    plot.title = element_text(color = "#FF4136", face = "bold")
+  )
+
+```
+
+### 7 b. Does high energy correlate with loudness?
+
+```{r}
+ ggplot(track_data, aes(x = energy, y = loudness)) +
+  geom_point(alpha = 0.4, color = "#AAAAAA") +
+  geom_smooth(method = "lm", color = "#FF0000") +
+  labs(title = "🔊 Energy vs Loudness", x = "Energy", y = "Loudness (dB)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.background = element_rect(fill = "#121212", color = NA),
+    panel.background = element_rect(fill = "#121212", color = NA),
+    axis.text = element_text(color = "#EAEAEA"),
+    axis.title = element_text(color = "#EAEAEA"),
+    plot.title = element_text(color = "#FF0000", face = "bold")
+  )
+
+```
+
+## 🎯🎵Task 6: Finding Related Songs to Anchor Tracks
+
+I picked 2 anchor songs: - "HUMBLE." by Kendrick Lamar - "Antidote" by Travis Scott. 
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/tvTRZJ-4EyI?si=CGLD4MiXzQcOTFKN" frameborder="0" allowfullscreen=""></iframe>
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/KnZ8h3MRuYg?si=nkozoVQcJUc2mQzs" frameborder="0" allowfullscreen=""></iframe>
+
+
+I used 5 heuristics to generate candidates for My final playlist:
+
+1.  **Songs that appear in playlists with “HUMBLE.” or “Antidote”**
+2.  **Songs in similar key and tempo** for seamless transitions
+3.  **Songs by the same artists** (Kendrick Lamar & Travis Scott)
+4.  **Songs with similar energy and danceability**
+5.  **Songs with similar valence** (our custom heuristic!)
+
+```{r}
+track_data <- read.csv("data/mp03/data.csv") %>%
+  rename(track_id = id)
+
+clean_artist_string <- function(x) {
+  x |>
+    str_replace_all("\\['", "") |>
+    str_replace_all("'\\]", "") |>
+    str_replace_all("[ ]?'", "") |>
+    str_replace_all("[ ]*,[ ]*", ",")
+}
+
+track_data_cleaned <- track_data %>%
+  separate_longer_delim(artists, ",") %>%
+  mutate(artist_name = clean_artist_string(artists)) %>%
+  select(-artists)
+
+
+anchor_ids <- all_playlists %>%
+  filter(track_name %in% c("HUMBLE.", "Antidote")) %>%
+  pull(track_id) %>%
+  unique()
+
+anchor_songs <- track_data_cleaned %>%
+  filter((name == "HUMBLE." & artist_name == "Kendrick Lamar") |
+         (name == "Antidote" & artist_name == "Travis Scott")) %>%
+  select(track_id, track_name = name, artist_name, popularity, danceability, energy, tempo, key) %>%
+  distinct()
+
+knitr::kable(anchor_songs, "html", escape = FALSE, caption = "🎯 Anchor Songs: HUMBLE. by Kendrick Lamar and Antidote by Travis Scott") %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 14,
+    bootstrap_options = c("striped", "hover", "condensed"),
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%   
+  row_spec(1:nrow(anchor_songs), background = "#121212", color = "#EAEAEA") 
+```
+
+### Heuristic 1: Co-occurrence
+
+```{r}
+co_occur_songs <- all_playlists %>% filter(track_id %in% anchor_ids) %>% pull(playlist_id)
+related_songs <- all_playlists %>%
+  filter(playlist_id %in% co_occur_songs, !track_id %in% anchor_ids) %>%
+  select(track_id, track_name, artist_name) %>% distinct()
+
+knitr::kable(head(related_songs, 10), "html", escape = FALSE, caption = "🔗 Heuristic 1: Songs from Same Playlists") %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 14,
+    bootstrap_options = c("striped", "hover", "condensed"),
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%   
+  row_spec(1:10, background = "#121212", color = "#EAEAEA")               
+
+```
+
+### Heuristic 2: Key & Tempo Match
+
+```{r}
+playlist_subset <- all_playlists %>%
+  filter(track_name %in% c("HUMBLE.", "Antidote"))
+
+
+playlist_full <- playlist_subset %>%
+  left_join(track_data_cleaned, by = "track_id")
+
+anchor_keys_tempos <- playlist_full %>%
+  filter(track_id %in% anchor_ids) %>%
+  distinct(key, tempo)
+
+keys <- anchor_keys_tempos$key
+tempo_range <- range(anchor_keys_tempos$tempo, na.rm = TRUE)
+
+harmonically_similar_songs <- track_data_cleaned %>%
+  filter(key %in% keys,
+         tempo >= tempo_range[1] - 5,
+         tempo <= tempo_range[2] + 5) %>%
+  select(track_id, track_name = name, artist_name) %>%
+  distinct()
+
+knitr::kable(head(harmonically_similar_songs, 10), "html", escape = FALSE, caption = "🎼 Heuristic 2: Same Key and Tempo") %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 14,
+    bootstrap_options = c("striped", "hover", "condensed"),
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>% 
+  row_spec(1:10, background = "#121212", color = "#EAEAEA")
+              
+```
+
+### Heuristic 3: Same Artist
+
+```{r}
+artist_matches <- track_data_cleaned %>%
+  filter(artist_name %in% c("Kendrick Lamar", "Travis Scott")) %>%
+  select(track_id, track_name = name, artist_name)
+
+knitr::kable(head(artist_matches, 10), "html", escape = FALSE, caption = "👤 Heuristic 3: Same Artist") %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 14,
+    bootstrap_options = c("striped", "hover", "condensed"),
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%   
+  row_spec(1:10, background = "#121212", color = "#EAEAEA")             
+```
+
+### Heuristic 4: Acoustic/Dance/Energy
+
+```{r}
+anchor_traits <- track_data_cleaned %>%
+  filter(name %in% c("HUMBLE.", "Antidote")) %>%
+  summarise(
+    danceability_min = min(danceability) - 0.1,
+    danceability_max = max(danceability) + 0.1,
+    energy_min = min(energy) - 0.1,
+    energy_max = max(energy) + 0.1
+  )
+similar_trait_songs <- track_data_cleaned %>%
+  filter(danceability >= anchor_traits$danceability_min,
+         danceability <= anchor_traits$danceability_max,
+         energy >= anchor_traits$energy_min,
+         energy <= anchor_traits$energy_max) %>%
+  select(track_id, track_name = name, artist_name)
+
+knitr::kable(head(similar_trait_songs, 10), "html", escape = FALSE, caption = "🎚️ Heuristic 4: Similar Danceability & Energy") %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 14,
+    bootstrap_options = c("striped", "hover", "condensed"),
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%   
+  row_spec(1:10, background = "#121212", color = "#EAEAEA")         
+
+```
+
+### Heuristic 5: Valence Similarity
+
+```{r}
+anchor_valence <- track_data_cleaned %>%
+  filter(name %in% c("HUMBLE.", "Antidote")) %>%
+  summarise(valence_min = min(valence, na.rm = TRUE) - 0.1,
+            valence_max = max(valence, na.rm = TRUE) + 0.1)
+custom_heuristic_songs <- track_data_cleaned %>%
+  filter(valence >= anchor_valence$valence_min,
+         valence <= anchor_valence$valence_max) %>%
+  select(track_id, track_name = name, artist_name)
+
+knitr::kable(head(custom_heuristic_songs, 10), "html", escape = FALSE, caption = "💖 Heuristic 5: Similar Valence (Mood)") %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 14,
+    bootstrap_options = c("striped", "hover", "condensed"),
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%  
+  row_spec(1:10, background = "#121212", color = "#EAEAEA") 
+
+```
+
+### Combined Playlist Candidates
+
+```{r}
+final_playlist <- bind_rows(
+  related_songs,
+  harmonically_similar_songs,
+  artist_matches,
+  similar_trait_songs,
+  custom_heuristic_songs
+) %>%
+  distinct() %>%
+  filter(!track_id %in% anchor_ids)
+
+knitr::kable(head(final_playlist, 10), "html", escape = FALSE, caption = "🎶 Combined Playlist Candidates") %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 14,
+    bootstrap_options = c("striped", "hover", "condensed"),
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>% 
+  row_spec(1:10, background = "#121212", color = "#EAEAEA")               
+
+
+```
+
+From this, I created a pool of over 200k potential songs and shortlisted 20 top candidates.
+
+```{r}
+final_playlist_enriched <- final_playlist %>%
+  left_join(track_data_cleaned, by = "track_id") %>%
+  rename(artist_name = artist_name.x) 
+
+not_popular_songs <- final_playlist_enriched %>%
+  filter(popularity < 70) %>%
+  select(track_name, artist_name, popularity) %>%
+  distinct()
+
+nrow(not_popular_songs)
+
+playlist_candidates <- final_playlist_enriched %>%
+  filter(!track_id %in% anchor_ids) %>%
+  select(track_id, track_name, artist_name, popularity, danceability, energy, tempo, key) %>%
+  distinct() %>%
+  arrange(desc(popularity)) %>%
+  slice_head(n = 20)
+
+knitr::kable(
+  playlist_candidates,
+  "html",
+  caption = "🎧 Top 20 Playlist Candidates After Applying Heuristics",
+  escape = FALSE
+) %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 14,
+    bootstrap_options = c("striped", "hover", "condensed"),
+    position = "center"
+  ) %>%
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%   
+  row_spec(1:20, background = "#1C1C1C", color = "#EAEAEA")             
+
+```
+
+I combined results, removed duplicates, and curated top 12 songs, including: - At least **2 unfamiliar songs** - At least **3 not popular (popularity \< 70)**
+
+## 🎧 Final Playlist
+
+```{r}
+anchor_songs <- track_data_cleaned %>%
+  filter(name %in% c("HUMBLE.", "Antidote")) %>%
+  select(track_id, track_name = name, artist_name, popularity, danceability, energy, tempo, key) %>%
+  distinct()
+
+playlist_candidates <- final_playlist_enriched %>%
+  select(track_id, track_name, artist_name, popularity, danceability, energy, tempo, key) %>%
+  distinct()
+
+final_12 <- bind_rows(
+  anchor_songs,
+  playlist_candidates %>%
+    filter(track_id %in% c(
+      "0VjIjW4GlUZAMYd2vXMi3b",  # Blinding Lights
+      "7ytR5pFWmSjzHJIeQkgog4",  # ROCKSTAR
+      "7eJMfftS33KTjuF7lTsMCx",  # death bed
+      "39Yp9wwQiSRIDOvrVg7mbk",  # THE SCOTTS
+      "4nK5YrxbMGZstTLbvj6Gxw",  # Supalonely
+      "127QTOFJsJQp5LbJbu3A1y",  # Toosie Slide
+      "1Cv1YLb4q0RzL6pybtaMLo",  # Sunday Best
+      "3mBCTEzhxcv6jLaxXoOvWs",  # Moondust - Strpped; EP Version 
+      "1WIfWj5skn5UUZTs4cEFBe",  # Location 
+      "5lw8Mgb4LyhriPIC86gV6e"   # RNP 
+    ))
+)
+
+final_12 <- final_12 %>%
+  filter(!(track_name == "HUMBLE." & artist_name != "Kendrick Lamar")) %>%
+  filter(!(track_name == "Antidote" & artist_name != "Travis Scott"))
+
+final_12_cleaned <- final_12 %>%
+  distinct(track_id, .keep_all = TRUE)
+
+# 📋 Display Final Playlist of 12 Songs
+
+knitr::kable(
+  final_12_cleaned %>%
+    select(track_name, artist_name, popularity, danceability, energy, tempo, key),
+  "html",
+  caption = "🎼 Final Curated Playlist: Midnight Ascension",
+  escape = FALSE
+) %>%
+  kable_styling(
+    full_width = FALSE,
+    font_size = 15,
+    bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+    position = "center"
+  ) %>%
+  column_spec(1, bold = TRUE, color = "#FF0000") %>%   # 🔴 Track Name in YouTube red
+  column_spec(2, italic = TRUE, color = "#999999") %>% # 👤 Artist in soft gray
+  column_spec(3, color = "#FFD700") %>%                # ⭐ Popularity in gold
+  column_spec(4:6, color = "#00FFAB") %>%              # 🟢 Metrics in neon mint
+  column_spec(7, color = "#FFA500") %>%                # 🔑 Key in orange
+  row_spec(0, bold = TRUE, background = "#FF0000", color = "white") %>%  # 🔻 Header in YouTube red
+  row_spec(1:12, background = "#1c1c1c", color = "#EAEAEA")              # Dark mode rows
+
+```
+
+## 🎼 Listen to the Playlist
+
+Here’s the final curated 12-song playlist for *Midnight Ascension*, embedded via Spotify.
+
+> 🎵 Best experienced with headphones.
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3bxJz5YqaCP5JiZ5pI9AV4?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+
+</iframe>
+
+## 🔮 Task 7: Curate and Analyze Playlist
+
+I named My playlist “Midnight Ascension”, combining high-energy and mood-driven tracks. I used line plots to visualize dynamics of: - Energy - Danceability - Tempo (scaled) - Popularity This helped Me validate flow: our playlist gently rises in intensity, dips slightly in mood, then finishes on a high.
+
+```{r track-dynamics-flow, echo=FALSE, fig.width=12, fig.height=6, message=FALSE, warning=FALSE}
+library(ggplot2)
+library(dplyr)
+library(scales)
+library(tidyr)
+
+final_12_scaled <- final_12_cleaned %>%
+  mutate(
+    track_order = row_number(),
+    danceability = rescale(danceability),
+    energy = rescale(energy),
+    tempo = rescale(tempo)
+  ) %>%
+  select(track_order, danceability, energy, tempo) %>%
+  pivot_longer(cols = -track_order, names_to = "metric", values_to = "value")
+
+ggplot(final_12_scaled, aes(x = track_order, y = value, color = metric)) +
+  geom_line(size = 1.2) +
+  geom_point(size = 2.5) +
+  scale_color_manual(
+    values = c(
+      danceability = "#e63946",  # soft red
+      energy = "#1d3557",        # deep blue
+      tempo = "#2a9d8f"          # teal
+    ),
+    labels = c("Danceability", "Energy", "Tempo (Scaled)"),
+    name = "Audio Feature"
+  ) +
+  scale_x_continuous(breaks = 1:12, labels = final_12_cleaned$track_name) +
+  labs(
+    title = "🎧 Track Dynamics Overview — Midnight Ascension",
+    subtitle = "A blend of rhythm, tempo, and energy across playlist flow",
+    x = "Track Order",
+    y = "Normalized Feature Value"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 16),
+    plot.subtitle = element_text(margin = margin(b = 10)),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    axis.title = element_text(face = "bold"),
+    legend.position = "top"
+  )
+```
