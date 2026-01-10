@@ -1,21 +1,30 @@
+
 project:
   type: website
   output-dir: docs
+  render:
+    - index.qmd
+    - mp02.qmd
+    - mp03.qmd
+    - mp04.qmd
+    
 
 website:
-  title: "STA 9750 Submission Material"
+  title: "Shubh Goyal | Data Analyst"
   navbar:
+    title: "Shubh Goyal"
     left:
-      - href: index.qmd
+      - href: index.html
         text: Home
-      - href: Mp01.qmd
-        text: Payroll
-      - href: mp02.qmd
-        text: Transit Awards
-      - href: mp03.qmd
-        text: Midnight Ascension Playlist
-      - href: mp04.qmd
-        text: 2024 Election County Shift Analysis
+      - href: mp01.html
+        text: Payroll Analysis
+      - href: mp02.html
+        text: Transit Analysis
+      - href: mp03.html
+        text: Spotify Playlist Analysis
+      - href: mp04.html
+        text: US Election Analysis
+
       
 
 format:
