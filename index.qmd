@@ -2,11 +2,86 @@
 title: "Shubh's Website"
 ---
 
-I am Shubh Goyal, a student at Baruch College. My expected graduation date is December 2025, and my field of employment is Data Analyst. I love playing badminton, watching web series, and exploring new places.
+# Shubh Goyal
 
-My Resume: <file:///C:/Users/goyal/OneDrive/Desktop/Shubh%20Goyal.pdf>
+### Data Analyst \| Business Analytics \| Data Visualization
 
-```{r}
-#| include: false
-1+1
-```
+I am a **Data Analyst** with hands-on experience analyzing real-world datasets using **R, Python, SQL, and Tableau**. I specialize in transforming raw data into clear insights, dashboards, and analytical reports that support business and operational decision-making.
+
+I am actively seeking **Data Analyst / Business Analyst** roles across operations, finance, healthcare, and consulting.
+
+------------------------------------------------------------------------
+
+## 🛠 Skills Snapshot
+
+**Programming & Analysis** - R, Python, SQL\
+- Data cleaning, EDA, statistical analysis
+
+**Visualization & BI** - Tableau, Power BI\
+- ggplot2, dashboards, storytelling
+
+**Tools** - GitHub, Quarto, RStudio
+
+------------------------------------------------------------------------
+
+## 📊 Featured Analytics Projects (R)
+
+These projects are fully documented and hosted on this website.
+
+### 🚇 Public Transit & Environmental Analysis
+
+Analyzed U.S. public transit systems to evaluate ridership trends and environmental efficiency.\
+**Tools:** R, dplyr, ggplot2
+
+### 🎵 Spotify Playlist Analysis
+
+Explored music characteristics and popularity patterns using large-scale Spotify playlist data.\
+**Tools:** R, data visualization
+
+### 🗳 U.S. Election Shift Analysis
+
+Analyzed county-level election data to identify geographic and political voting shifts.\
+**Tools:** R, data wrangling, visualization
+
+➡️ Use the navigation bar above to explore these projects.
+
+------------------------------------------------------------------------
+
+## 🐍 Python & BI Projects
+
+These projects are hosted on GitHub and focus on business analytics and operational insights.
+
+### 🛍 Retail BI & Customer Segmentation
+
+End-to-end analysis of retail transaction data, including RFM segmentation and customer clustering.\
+**Tools:** Python, SQL, Power BI\
+🔗 <https://github.com/shubh1133/retail-bi-customer-segmentation>
+
+### 🚚 Supply Chain Anomaly Detection
+
+Identified delivery delays and operational anomalies in e-commerce supply chain data.\
+**Tools:** Python, Power BI\
+🔗 <https://github.com/shubh1133/supply-chain-anomaly-detection>
+
+------------------------------------------------------------------------
+
+## 📈 Tableau Data Visualization Story
+
+### 📊 Business & Data Storytelling (Tableau Public)
+
+Created an interactive Tableau story focusing on data-driven insights and visual storytelling.\
+🔗 *(Add your Tableau Public story link here)*
+
+------------------------------------------------------------------------
+
+## 📄 Resume
+
+[Download Resume](Shubh_Goyal_Resume.pdf)
+
+------------------------------------------------------------------------
+
+## 📫 Contact
+
+-   GitHub: <https://github.com/shubh1133>\
+-   LinkedIn: *(add your LinkedIn link)*\
+-   Email: goyalshubh0605\@gmail.com
