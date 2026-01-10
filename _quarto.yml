@@ -5,17 +5,19 @@ project:
 website:
   title: "Shubh Goyal | Data Analyst"
   navbar:
+    title: "Shubh Goyal"
     left:
       - href: index.qmd
         text: Home
-      - href: Mp01.qmd
-        text: Payroll
+      - href: mp01.qmd
+        text: Payroll Analysis
       - href: mp02.qmd
-        text: Transit Awards
+        text: Transit Analysis
       - href: mp03.qmd
-        text: Midnight Ascension Playlist
+        text: Spotify Playlist Analysis
       - href: mp04.qmd
-        text: 2024 Election County Shift Analysis
+        text: US Election Analysis
+
       
 
 format:
