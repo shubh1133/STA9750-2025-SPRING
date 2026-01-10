@@ -1,4 +1,3 @@
-
 project:
   type: website
   output-dir: docs
@@ -7,7 +6,6 @@ project:
     - mp02.qmd
     - mp03.qmd
     - mp04.qmd
-    
 
 website:
   title: "Shubh Goyal | Data Analyst"
@@ -16,16 +14,12 @@ website:
     left:
       - href: index.html
         text: Home
-      - href: mp01.html
-        text: Payroll Analysis
       - href: mp02.html
         text: Transit Analysis
       - href: mp03.html
         text: Spotify Playlist Analysis
       - href: mp04.html
         text: US Election Analysis
-
-      
 
 format:
   html:
