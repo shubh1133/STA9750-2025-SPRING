@@ -20,6 +20,8 @@ website:
         text: Spotify Playlist Analysis
       - href: mp04.html
         text: US Election Analysis
+      - href: final-project.html
+        text: NYC Subway Recovery Analysis
 
 format:
   html:

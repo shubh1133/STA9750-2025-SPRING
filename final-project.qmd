@@ -126,10 +126,10 @@ load_subway_year <- function(file_path, year) {
       mutate(year = year)
   }
 
-subway_2020 <- load_subway_year("data/subway_ridership_2020.xlsx", 2020)
-subway_2021 <- load_subway_year("data/subway_ridership_2021.xlsx", 2021)
-subway_2022 <- load_subway_year("data/subway_ridership_2022.xlsx", 2022)
-subway_2023 <- load_subway_year("data/subway_ridership_2023.xlsx", 2023)
+subway_2020 <- load_subway_year("project/data/subway_ridership_2020.xlsx", 2020)
+subway_2021 <- load_subway_year("project/data/subway_ridership_2021.xlsx", 2021)
+subway_2022 <- load_subway_year("project/data/subway_ridership_2022.xlsx", 2022)
+subway_2023 <- load_subway_year("project/data/subway_ridership_2023.xlsx", 2023)
 
 subway_all <- bind_rows(subway_2020, subway_2021, subway_2022, subway_2023)
 ```
@@ -155,7 +155,7 @@ station_coords <- subway_all %>%
 stations_sf <- station_coords %>%
   st_as_sf(coords = c("longitude", "latitude"), crs = 4326)
 
-zcta_shapes <- st_read("data/zcta_shapefiles/tl_2020_us_zcta520.shp") %>%
+zcta_shapes <- st_read("project/data/zcta_shapefiles/tl_2020_us_zcta520.shp") %>%
   st_transform(crs = 4326)
 
 
